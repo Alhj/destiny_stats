@@ -14,7 +14,7 @@ const getPlayerProfil = async (membershipType, displayName) => {
 
     const memberId = respons.Response[0].membershipId
     
-    respons = await fetch(url + `/Destiny2/${membershipType}/Profile/${memberId}/?components=100`, config).then(res => res.json());
+    respons = await fetch(url + `//Destiny2/${membershipType}/Profile/${memberId}/?components=100`, config).then(res => res.json());
 
     return respons.Response.profile
 }

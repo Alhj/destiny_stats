@@ -12,12 +12,14 @@ side.route('/:membershipType/:displayName')
     const characters = []
 
     for(let x = 0; x < playerProfil.data.characterIds.length; x++) {
-      const character = await getCharacterData(req.params.membershipType, playerProfil.data.membershipId, playerProfil.data.characterIds[x]);
+      const character = await getCharacterData(req.params.membershipType, playerProfil.data.userInfo.membershipId, playerProfil.data.characterIds[x]);
 
       characters.push(character);
     }
 
-    res.status(401).send('hello world');
+    const json = JSON.stringify(characters);
+
+    res.status(401).send(json);
   })
 
 
