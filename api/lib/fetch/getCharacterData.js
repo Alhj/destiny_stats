@@ -11,9 +11,6 @@ const getCharacterData = async (membershipType, membershipId, characterId) => {
         'X-API-Key': process.env.API_KEY,
       }
     }
-    // TODO: find destiny account id in api
-    
-    //console.log(url + `/Destiny2/${membershipType}/Profile/${membershipId}/Character/${characterId}/`);
 
     const character = await fetch(url + `/Destiny2/${membershipType}/Profile/${membershipId}/Character/${characterId}/?components=200`, config).then(res => res.json());
 
