@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 const StartSearch:(props:any) => JSX.Element = (props) => {
   const[platform, setplatformor] = useState('steam');
@@ -20,27 +21,30 @@ const StartSearch:(props:any) => JSX.Element = (props) => {
 
   const handelSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+    setRedirect(true);
   }
 
+  if(redirect) {
+    return <Redirect to='/account/'/>
+  } else {
+    return(
+    <div>
+      <h1>account name</h1>
+      <p>{platform} number:{platformNumber}</p>
+      <form onSubmit={e => handelSubmit(e)}>
+        <input id='playerSearch' type='text' value={userName} onChange={(e:React.ChangeEvent<HTMLInputElement>) => handleInputChange(e)}/>
+        <select onChange={(event:React.ChangeEvent<HTMLSelectElement>) => handleChange(event)} value={platform}>
+          <option value={['steam 3']}>steam</option>
+          <option value={['xbox 1']}>xbox</option>
+          <option value={['ps4 2']}>ps4</option>
+        </select>
 
-  return(
-  <div>
-    <h1>account name</h1>
-    <p>{platform} number:{platformNumber}</p>
-    <form onSubmit={e => handelSubmit(e)}>
-      <input id='playerSearch' type='text' value={userName} onChange={(e:React.ChangeEvent<HTMLInputElement>) => handleInputChange(e)}/>
-      <select onChange={(event:React.ChangeEvent<HTMLSelectElement>) => handleChange(event)} value={platform}>
-        <option value={['steam 3']}>steam</option>
-        <option value={['xbox 1']}>xbox</option>
-        <option value={['ps4 2']}>ps4</option>
-      </select>
-
-      <br/>
-      <input type="submit" value='submit'/>
-    </form>
-  </div>
-  );
+        <br/>
+        <input type="submit" value='submit'/>
+      </form>
+    </div>
+    );
+  }
 };
 
 

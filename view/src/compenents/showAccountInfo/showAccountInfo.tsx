@@ -3,23 +3,16 @@ import Loading from '../loading/loading';
 import {getAccountInfo} from '../../helpers/getAccountInfo';
 
 
-
 const ShowAccountInfo:(props:any) => JSX.Element = (props) => {
 
 
-  const[isLoading, setIsLoading] = useState(false);
+  const[isLoading, setIsLoading] = useState(true);
 
-  if(isLoading) {
-    return(
-      <div>
-        <h1>test</h1>
-      </div>
-    )
-  } else {
-    return(
-      <Loading/>
-    )
-  }
+  return(
+    <div>
+      <h1>hello</h1>
+    </div>
+  );
 }
 
 export default ShowAccountInfo;
