@@ -6,7 +6,7 @@ const genereateKey = () => {
   const data = process.env.DATA
 
 
-  const token = jst.sign({data:data},secret, {expiresIn:60})
+  const token = jst.sign({data:data},secret, { expiresIn: '1h' })
 
   return token
 }
