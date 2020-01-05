@@ -8,6 +8,7 @@ side.route('/')
 
     const generatedApiKey = apiKey.genereateKey();
       res.header('authorization', 'Bearer ' + generatedApiKey)
+      res.header('Access-Control-Allow-Origin', 'https://ca6645d1.ngrok.io/')
 
       const obj = {
         text:'api key generate found in header',

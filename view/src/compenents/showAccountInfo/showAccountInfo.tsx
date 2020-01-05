@@ -10,11 +10,7 @@ const ShowAccountInfo:(props:any) => JSX.Element = (props) => {
 
   
   const loading = async () => {
-    const accountInfo = await new Promise((resolve, rejects) => {
-      setTimeout(() => {
-        resolve('hello');
-      }, 3000)
-    })
+    getAccountInfo('3', 'Gauntlet Of Thanos')
 
     setIsLoading(true);
   }

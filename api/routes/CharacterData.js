@@ -28,6 +28,8 @@ side.route('/:membershipType/:displayName')
           character: json
         }
 
+        res.header('Access-Control-Allow-Origin', 'https://ca6645d1.ngrok.io/');
+
         res.status(401).send(obj);
       } else {
 
@@ -35,6 +37,8 @@ side.route('/:membershipType/:displayName')
           statusCode: 403,
           message: 'no api key in header',
         }
+
+        res.header('Access-Control-Allow-Origin', 'https://ca6645d1.ngrok.io/');
 
         res.status(403).send(obj);
       }
