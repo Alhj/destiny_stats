@@ -23,22 +23,18 @@ side.route('/:membershipType/:displayName')
         const json = JSON.stringify(characters);
 
         const obj = {
-          statusCode: 201,
+          statusCode: 200,
           message:'your character information',
           character: json
         }
 
-        res.header('Access-Control-Allow-Origin', 'https://ca6645d1.ngrok.io/');
-
-        res.status(401).send(obj);
+        res.status(200).send(obj);
       } else {
 
         const obj = {
           statusCode: 403,
           message: 'no api key in header',
         }
-
-        res.header('Access-Control-Allow-Origin', 'https://ca6645d1.ngrok.io/');
 
         res.status(403).send(obj);
       }
