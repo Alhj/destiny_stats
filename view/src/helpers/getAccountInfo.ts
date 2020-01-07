@@ -1,17 +1,18 @@
 const getAccountInfo: (platformNumber:string, userName:string) => Promise<any> = async (platformNumber:string, userName:string) => {
   
-  let config:RequestInit = {
-    method:'GET',
-    mode: 'cors'
+  const apiKeyRespons = await fetch('/apiKey');
+
+  const apiKey:string | null = apiKeyRespons.headers.get('authorization');
+  
+  const header: HeadersInit = new Headers();
+
+  header.set('authorization', `${apiKey}`)
+
+  const config = {
+    headers:header
   }
 
-  const apiKeyRespons: Response = await window.fetch('https://ca6645d1.ngrok.io/apiKey', config);
-
-  const key:string | null = apiKeyRespons.headers.get('authorization');
-
-  console.log(key);
-
-  //const accoutnData: Response = await fetch(`http://d9abae14.ngrok.io/character/${platformNumber}/${userName}`);
+  const accoutnData: Response = await fetch(`http://d9abae14.ngrok.io/character/${platformNumber}/${userName}`, config);
   
   //console.log(accoutnData);
 
