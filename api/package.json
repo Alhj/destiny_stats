@@ -8,6 +8,9 @@
     "nodemon": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "12.14"
+  },
   "author": "Alex Hjortenkrans",
   "license": "ISC",
   "dependencies": {
