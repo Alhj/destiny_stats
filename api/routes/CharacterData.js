@@ -8,7 +8,9 @@ const apiKey = require('../lib/apiKey/apiKey');
 side.route('/:membershipType/:displayName')
   .get(async (req, res) => {
 
-      if(req.header('authorization') && apiKey.checkKey(req.header('authorization'))) {
+      const token = req.header('authorization').substring(7)
+
+      if(req.header('authorization') && apiKey.checkKey(req.header('authorization').substring(7))) {
         
         const playerProfil = await getPlayerProfil(req.params.membershipType, req.params.displayName);
 
@@ -19,13 +21,10 @@ side.route('/:membershipType/:displayName')
 
           characters.push(character);
         }
-
-        const json = JSON.stringify(characters);
-
         const obj = {
           statusCode: 200,
           message:'your character information',
-          character: json
+          character: characters
         }
 
         res.status(200).send(obj);

@@ -12,9 +12,9 @@ const getAccountInfo: (platformNumber:string, userName:string) => Promise<any> =
     headers:header
   }
 
-  const accoutnData: Response = await fetch(`http://d9abae14.ngrok.io/character/${platformNumber}/${userName}`, config);
+  const accoutnData = await fetch(`/character/${platformNumber}/${userName}`, config).then(res => res.json());
   
-  //console.log(accoutnData);
+  console.log(accoutnData);
 
   return 'hello';
 };
