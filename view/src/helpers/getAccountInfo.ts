@@ -1,4 +1,6 @@
-const getAccountInfo: (platformNumber:string, userName:string) => Promise<any> = async (platformNumber:string, userName:string) => {
+import {characters, respons} from '../types/types';
+
+const getAccountInfo: (platformNumber:string, userName:string) => Promise<characters[]> = async (platformNumber:string, userName:string) => {
   
   const apiKeyRespons = await fetch('/apiKey');
 
@@ -12,11 +14,11 @@ const getAccountInfo: (platformNumber:string, userName:string) => Promise<any> =
     headers:header
   }
 
-  const accoutnData = await fetch(`/character/${platformNumber}/${userName}`, config).then(res => res.json());
+  const accoutnData:respons = await fetch(`/character/${platformNumber}/${userName}`, config).then(res => res.json());
   
-  console.log(accoutnData);
+  const chars:characters[] = accoutnData.characters
 
-  return 'hello';
+  return chars;
 };
 
 export {

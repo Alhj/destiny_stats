@@ -1,3 +1,9 @@
+export interface respons {
+  statusCode: number
+  message:string
+  characters: characters[]
+}
+
 export interface characters {
   emblemBackgroundPath:string
   classType:number
