@@ -6,7 +6,7 @@ const Header: () => JSX.Element = () => {
 
   return(
     <div className='header'>
-      <Link to='/' style={{textDecoration: 'none'}}><h1>Destiny Stats</h1></Link>
+      <h1><Link to='/' style={{textDecoration: 'none', fontFamily: 'Arial, Helvetica, sans-serif', color:'white', padding: '4px'}}>Destiny Stats</Link></h1>
     </div>
   );
 }

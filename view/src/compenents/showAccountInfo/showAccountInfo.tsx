@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import Loading from '../loading/loading';
 import {getAccountInfo} from '../../helpers/getAccountInfo';
 import {characters} from '../../types/types';
+import './showAccountInfo.css'
+
+const url:string = 'https://www.bungie.net'
 
 const ShowAccountInfo:(props:any) => JSX.Element = (props) => {
 
@@ -18,16 +21,12 @@ const ShowAccountInfo:(props:any) => JSX.Element = (props) => {
     switch (classType) {
       case 0:
         return 'Titan';
-        break;
       case 1: 
       return 'Hunter'
-      break;
       case 2:
       return 'Warlock' 
-      break
       default: 
-      return 'no class found'
-      break;
+      return 'no class found' 
     }
   } 
 
@@ -45,9 +44,11 @@ const ShowAccountInfo:(props:any) => JSX.Element = (props) => {
   if(isLoading) {
 
     const chars = characters.map(character => 
-      <div key={character.classType}>
-        <p>{character.light}</p>
-        <p>{classType(character.classType)}</p>
+      <div className='class' style={{backgroundImage: 'url('+ url + character.emblemBackgroundPath +')', backgroundRepeat:'no-repeat'}} key={character.classType}>
+        <div className=''>
+          <h1 className='characterLigth'>✦{character.light}</h1>
+          <h1 className='characterClassType'>{classType(character.classType)}</h1>
+        </div>
       </div>
       ) 
 
