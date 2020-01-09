@@ -10,8 +10,9 @@ const getPlayerProfil = async (membershipType, displayName) => {
         'X-API-Key': process.env.API_KEY,
       }
     }
-    let respons = await fetch(url + `Destiny2/SearchDestinyPlayer/${membershipType}/${displayName}`, config).then(res => res.json())
 
+    console.log(membershipType, displayName)
+    let respons = await fetch(url + `Destiny2/SearchDestinyPlayer/${membershipType}/${displayName}`, config).then(res => res.json())
     const memberId = respons.Response[0].membershipId
     
     respons = await fetch(url + `//Destiny2/${membershipType}/Profile/${memberId}/?components=100`, config).then(res => res.json());

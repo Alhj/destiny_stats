@@ -10,7 +10,13 @@ export interface characters {
   light:number
 }
 
-export interface allCharacters {
+export interface responsAllChars {
+  status:number,
+  message:string
+  Respons:allCharactersStats
+}
+
+export interface allCharactersStats {
   pve:allPvP
   pvp:allPvP
 }

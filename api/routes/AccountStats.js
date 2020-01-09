@@ -2,13 +2,18 @@ require('dotenv').config()
 const side = require('express').Router()
 
 const apiKey = require('../lib/apiKey/apiKey')
+const getPlayerProfil = require('../lib/fetch/getPlayerProfil')
 const getAccountStats = require('../lib/fetch/getAccountStats')
 
-side.route('/:membershipType/:membershipId')
+side.route('/:membershipType/:userName')
   .get(async (req,res) => {
     if(req.header('authorization') && apiKey.checkKey(req.header('authorization').substring(7))) {
       
-      const accountStats = await getAccountStats(req.params.membershipType,req.params.membershipId);
+      
+      const playerProfil = await getPlayerProfil(req.params.membershipType,req.params.userName);
+      
+      
+      const accountStats = await getAccountStats(req.params.membershipType, playerProfil.data.userInfo.membershipId);
 
       console.log(accountStats.mergedAllCharacters.results);
 
