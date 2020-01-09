@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import './startSearch.css'
+import React, {useState} from 'react';
 
-const StartSearch:(props:any) => JSX.Element = (props) => {
+
+const SearchBar: () => JSX.Element = () => {
   const[platform, setplatformor] = useState('steam');
   const[platformNumber, setPlatformorNumber] = useState('3');
   const[userName, setUserName] = useState('');
-  const[redirect, setRedirect] = useState(false);
   
   const handleChange:(event:React.ChangeEvent<HTMLSelectElement>) => void = (event:React.ChangeEvent<HTMLSelectElement>) => {
     event.preventDefault();
@@ -23,20 +21,11 @@ const StartSearch:(props:any) => JSX.Element = (props) => {
 
   const handelSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setRedirect(true);
   }
 
-  if(redirect) {
-    const url = `/account/${platformNumber}/${userName}/`
-    
-    return <Redirect to={url}/>
-  } else {
-    return(
+  return(
     <div>
-      <h1>account name</h1>
-      <p>{platform} number:{platformNumber}</p>
-      <div className='searchForm'>
-        <form onSubmit={e => handelSubmit(e)}>
+      <form onSubmit={e => handelSubmit(e)}>
           <select onChange={event => handleChange(event)} value={platform}>
               <option value={['steam 3']}>steam</option>
               <option value={['xbox 1']}>xbox</option>
@@ -44,11 +33,10 @@ const StartSearch:(props:any) => JSX.Element = (props) => {
             </select>
             <input id='playerSearch' type='text' value={userName} placeholder='serach...' onChange={(e:React.ChangeEvent<HTMLInputElement>) => handleInputChange(e)}/>
         </form>
-      </div>
     </div>
-    );
-  }
+  )
 };
 
 
-export default StartSearch;
+
+export default SearchBar;

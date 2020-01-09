@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import {useParams} from 'react-router';
+
 import Loading from '../loading/loading';
 import {getAccountInfo} from '../../helpers/getAccountInfo';
 import {characters} from '../../types/types';
@@ -6,14 +8,14 @@ import './showAccountInfo.css'
 
 const url:string = 'https://www.bungie.net'
 
-const ShowAccountInfo:(props:any) => JSX.Element = (props) => {
+const ShowAccountInfo:() => JSX.Element = () => {
 
   const firstChar:characters = {
    emblemBackgroundPath: '',
    classType: 0,
    light: 0 
   }
-
+  const [platformNumber, userName] = useParams();
   const[isLoading, setIsLoading] = useState(false);
   const[characters, setCharacters] = useState([firstChar]);
   
@@ -31,7 +33,7 @@ const ShowAccountInfo:(props:any) => JSX.Element = (props) => {
   } 
 
   const loading = async () => {
-    const charInfo:characters[] = await getAccountInfo('3', 'Gauntlet Of Thanos')
+    const charInfo:characters[] = await getAccountInfo(platformNumber, userName)
     
     setCharacters(charInfo);
     setIsLoading(true);

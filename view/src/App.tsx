@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
 import Header from './compenents/header/header';
 import StartSearch from './compenents/startSearch/startSearch';
 import ShowAccountInfo from './compenents/showAccountInfo/showAccountInfo';
+import Test from './compenents/test';
 
 const App: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const App: React.FC = () => {
         <Header/>
         <Switch>
           <Route exact path='/' component={StartSearch}/>
-          <Route exact path='/account/' component={ShowAccountInfo}/>
+          <Route exact path='/account/:id/' component={Test}/>
         </Switch>
       </Router>
   );
