@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 
 const getAccountData = async (membershipType, membershipId) => {
-  const url = `https://www.bungie.net/Platform/Destiny2/${membershipType}/${membershipId}/stats/?groups=2`
+  const url = `https://www.bungie.net/Platform/Destiny2/${membershipType}/Account/${membershipId}/Stats/?groups=2`
 
   let config = {
     headers:{
@@ -13,9 +13,9 @@ const getAccountData = async (membershipType, membershipId) => {
   }
 
 
-  const respons = await fetch(url,config);
+  const respons = await fetch(url,config).then(res => res.json());
 
-  return respons.Respons
+  return respons.Response
 }
 
 module.exports = getAccountData

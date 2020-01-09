@@ -14,5 +14,6 @@ app.use(cors())
 
 app.use('/character', require('./routes/CharacterData'))
 app.use('/apiKey', require('./routes/ApiKey'))
+app.use('/stats', require('./routes/AccountStats'))
 
 app.listen(port, () => console.log(`listen on port: ${port}`))
