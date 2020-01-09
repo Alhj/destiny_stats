@@ -10,6 +10,11 @@ export interface characters {
   light:number
 }
 
+export interface allCharacters {
+  pve:allPvP
+  pvp:allPvP
+}
+
 export interface charactersStats {
   characterId: string
   deleted: boolean
