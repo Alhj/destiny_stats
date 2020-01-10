@@ -1,6 +1,8 @@
 import React from 'react';
 import {allCharactersStats} from '../../types/types';
 
+import './showAllTimeStats.css'
+
 interface propsInterface {
   stats:allCharactersStats
 }
@@ -10,7 +12,7 @@ const showAllTimeStats = (props:propsInterface) => {
     const pveStats = props.stats.pve.allTime;
 
 
-    console.log(pvpStats)
+    console.log(pveStats)
   return(
     <div className='cointener'>
       <div className='item'>
@@ -20,7 +22,19 @@ const showAllTimeStats = (props:propsInterface) => {
         <h2>Sidearms: {pvpStats.weaponKillsSideArm.basic.value}</h2>
       </div>
       <div className='item'>
-        <h2>Sniper rifle kills: {pvpStats.weaponKillsSniper.basic.value}</h2>
+        <h2>Scout rifle kills: {pvpStats.weaponKillsScoutRifle.basic.value}</h2>
+      </div>
+      <div className='item'>
+        <h2>Pulse rifle kills: {pvpStats.weaponKillsPulseRifle.basic.value}</h2>
+      </div>
+      <div className='item'>
+        <h2>Auto rifle kills: {pvpStats.weaponKillsAutoRifle.basic.value}</h2>
+      </div>
+      <div className='item'>
+        <h2>Bow Kills: {pvpStats.weaponKillsBow.basic.value}</h2>
+      </div>
+      <div className='item'>
+        <h2>Submachine gun kills:{pvpStats.weaponKillsSubmachinegun.basic.value}</h2>
       </div>
     </div>
   )
