@@ -13,7 +13,7 @@ export interface characters {
 export interface responsAllChars {
   status:number,
   message:string
-  Respons:allCharactersStats
+  Response:allCharactersStats
 }
 
 export interface allCharactersStats {
@@ -27,7 +27,7 @@ export interface charactersStats {
   result: allPvP
 }
 
-interface allPvP {
+export interface allPvP {
   activitiesEntered:activitiesEnteredStats
   weaponKillsAutoRifle: weaponKillsStats
   weaponKillsFusionRifle: weaponKillsStats
@@ -59,11 +59,11 @@ interface allPvP {
  }
 
  interface weaponKillsStats {
-  statsId:string
+  statId:string
   basic:weaponsStatsBasic
 }
 
 interface weaponsStatsBasic {
-  value: string
+  value: number,
   displayValue: string
 }

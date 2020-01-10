@@ -36,8 +36,7 @@ const getAccountStats:(platformNumber:string, userName:string) => Promise<allCha
   };
 
   const accoutnData:responsAllChars = await fetch(`/stats/${platformNumber}/${userName}`, config).then(res => res.json());
-
-  return accoutnData.Respons
+  return accoutnData.Response
 }
 
 export {
