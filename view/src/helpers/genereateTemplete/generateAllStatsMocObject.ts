@@ -2,8 +2,12 @@ import {allCharactersStats, allPvP} from '../../types/types';
 
 const genereateTemplete: () => allCharactersStats = () => {
   const temp:allCharactersStats = {
-    pve: gerenteStats(),
-    pvp: gerenteStats()
+    pve: {
+      allTime:gerenteStats()
+    },
+    pvp: {
+      allTime:gerenteStats()
+    }
   };
 
   return temp;

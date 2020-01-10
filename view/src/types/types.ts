@@ -17,8 +17,12 @@ export interface responsAllChars {
 }
 
 export interface allCharactersStats {
-  pve:allPvP
-  pvp:allPvP
+  pve:{
+    allTime:allPvP
+  }
+  pvp:{
+    allTime:allPvP
+  }
 }
 
 export interface charactersStats {
