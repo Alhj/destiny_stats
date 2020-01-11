@@ -3,7 +3,7 @@ import React from 'react';
 import {useParams} from 'react-router';
 
 const Test = () => {
-  const[id] = useParams();
+  const {id} = useParams();
   
   return(
     <div>

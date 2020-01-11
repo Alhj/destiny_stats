@@ -12,8 +12,8 @@ const App: React.FC = () => {
         <Header/>
         <Switch>
           <Route exact path='/' component={StartSearch}/>
-          <Route exact path='/account/' component={ShowAccountInfo}/>
-          <Route exact path='/account/:id/' component={Test}/>
+          <Route  path='/account/' component={ShowAccountInfo}/>
+          <Route  path='/test/:id' component={Test}/>
         </Switch>
       </Router>
   );

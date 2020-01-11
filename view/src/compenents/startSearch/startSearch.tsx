@@ -36,11 +36,11 @@ const StartSearch:(props:any) => JSX.Element = (props) => {
       <h1>account name</h1>
       <p>{platform} number:{platformNumber}</p>
       <div className='searchForm'>
-        <form onSubmit={e => handelSubmit(e)}>
-          <select onChange={event => handleChange(event)} value={platform}>
-              <option value={['steam 3']}>steam</option>
-              <option value={['xbox 1']}>xbox</option>
-              <option value={['ps4 2']}>ps4</option>
+        <form onSubmit={handelSubmit}>
+          <select onChange={event => handleChange(event)}>
+              <option selected={platform === 'steam'} value={['steam 3']}>steam</option>
+              <option selected={platform === 'xbox'} value={['xbox 1']}>xbox</option>
+              <option selected={platform === 'ps4'} value={['ps4 2']}>ps4</option>
             </select>
             <input id='playerSearch' type='text' value={userName} placeholder='serach...' onChange={(e:React.ChangeEvent<HTMLInputElement>) => handleInputChange(e)}/>
         </form>
