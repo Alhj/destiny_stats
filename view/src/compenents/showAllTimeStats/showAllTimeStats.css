@@ -1,8 +1,12 @@
 .cointener {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
 }
 
+
+/*
+  flex: 3 column layout
+*/
 .item {
-  margin: 4px;
+  flex: 3 33%;
 }

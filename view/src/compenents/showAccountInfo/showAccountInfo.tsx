@@ -21,7 +21,7 @@ const ShowAccountInfo: () => JSX.Element = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [accountCharacters, setAccountCharacters] = useState([firstChar]);
   const [allStats, setAllStats] = useState(genereateTemplete());
-  const {platformNumber, accountName} = useParams();
+  const { platformNumber, accountName } = useParams();
 
   const classType: (classType: number) => string = (classType: number) => {
     switch (classType) {
@@ -65,22 +65,24 @@ const ShowAccountInfo: () => JSX.Element = () => {
     <div
       className="class"
       style={{
-        backgroundImage: "url(" + url + accountCharacter.emblemBackgroundPath + ")",
+        backgroundImage:
+          "url(" + url + accountCharacter.emblemBackgroundPath + ")",
         backgroundRepeat: "no-repeat"
       }}
       key={accountCharacter.classType}
     >
       <div className="">
         <h1 className="characterLigth">✦{accountCharacter.light}</h1>
-        <h1 className="characterClassType">{classType(accountCharacter.classType)}</h1>
+        <h1 className="characterClassType">
+          {classType(accountCharacter.classType)}
+        </h1>
       </div>
     </div>
   ));
 
   return (
     <div>
-      {chars}
-
+      <div className=''>{chars}</div>
       <ShowAllTimeStats stats={allStats} />
     </div>
   );
