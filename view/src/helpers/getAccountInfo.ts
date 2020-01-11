@@ -1,7 +1,7 @@
 import {characters, respons} from '../types/types';
-import {responsAllChars, allCharactersStats} from '../types/types';
+import {responsAllChars} from '../types/types';
 
-const getAccountInfo: (platformNumber:string, userName:string) => Promise<characters[]> = async (platformNumber:string, userName:string) => {
+const getAccountInfo = async (platformNumber:string | undefined, accountName:string| undefined) => {
   
   const apiKeyRespons = await fetch('/apiKey');
 
@@ -14,7 +14,7 @@ const getAccountInfo: (platformNumber:string, userName:string) => Promise<charac
   const config = {
     headers:header
   }
-  const accoutnData:respons = await fetch(`/character/${platformNumber}/${userName}`, config).then(res => res.json());
+  const accoutnData:respons = await fetch(`/character/${platformNumber}/${accountName}`, config).then(res => res.json());
   
   const chars:characters[] = accoutnData.characters
 
@@ -22,7 +22,7 @@ const getAccountInfo: (platformNumber:string, userName:string) => Promise<charac
 };
 
 
-const getAccountStats:(platformNumber:string, userName:string) => Promise<allCharactersStats> = async (platformNumber:string, userName:string) => {
+const getAccountStats = async (platformNumber:string | undefined, userName:string | undefined) => {
   const apiKeyRespons = await fetch('/apiKey');
 
   const apiKey:string | null = apiKeyRespons.headers.get('authorization');

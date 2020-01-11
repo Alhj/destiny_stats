@@ -1,0 +1,25 @@
+.SearchBar{
+  height: 30px;
+  display: flex;
+}
+
+.SearchBar select {
+  height: 100%;
+  border: none;
+  border-top-left-radius: 99px;
+  border-bottom-left-radius: 99px;
+  background-color: #d6d6d6;
+}
+
+.SearchBar input {
+  height: 100%;
+  border: none;
+  padding: 0;
+  border-top-right-radius: 99px;
+  border-bottom-right-radius: 99px;
+}
+
+.SearchBar select, .SearchBar input {
+  font-size: 1.1em;
+  padding: 0 10px;
+}
