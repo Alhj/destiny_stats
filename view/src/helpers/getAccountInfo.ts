@@ -1,5 +1,5 @@
-import {characters, respons} from '../types/types';
-import {responsAllChars} from '../types/types';
+import {respons} from '../types/types';
+import {responsAllChars, errorInFetch} from '../types/types';
 
 const getAccountInfo = async (platformNumber:string | undefined, accountName:string| undefined) => {
   
@@ -14,11 +14,14 @@ const getAccountInfo = async (platformNumber:string | undefined, accountName:str
   const config = {
     headers:header
   }
-  const accoutnData:respons = await fetch(`/character/${platformNumber}/${accountName}`, config).then(res => res.json());
-  
-  const chars:characters[] = accoutnData.characters
+  const accoutnData:respons | errorInFetch = await fetch(`/character/${platformNumber}/${accountName}`, config).then(res => res.json());
 
-  return chars;
+  if((accoutnData as errorInFetch).error) {
+    return (accoutnData as errorInFetch);
+  } else {
+    return (accoutnData as respons).characters
+  }
+
 };
 
 

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./searchBar.css";
 import { useHistory } from "react-router-dom";
 
-
 const SearchBar: () => JSX.Element = () => {
   const [platform, setplatformor] = useState("steam");
   const [platformNumber, setPlatformorNumber] = useState("3");
@@ -34,15 +33,9 @@ const SearchBar: () => JSX.Element = () => {
     <div className="SearchBar">
       <form onSubmit={e => handelSubmit(e)}>
         <select onChange={event => handleChange(event)} defaultValue={platform}>
-          <option value={["steam 3"]}>
-            steam
-          </option>
-          <option value={["xbox 1"]}>
-            xbox
-          </option>
-          <option value={["ps4 2"]}>
-            ps4
-          </option>
+          <option value={["steam 3"]}>steam</option>
+          <option value={["xbox 1"]}>xbox</option>
+          <option value={["ps4 2"]}>ps4</option>
         </select>
         <input
           id="playerSearch"

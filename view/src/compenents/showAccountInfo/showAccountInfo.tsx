@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams, useHistory } from "react-router";
 
 import Loading from "../loading/loading";
 import ShowAllTimeStats from "../showAllTimeStats/showAllTimeStats";
 import { getAccountInfo, getAccountStats } from "../../helpers/getAccountInfo";
 import { allCharactersStats } from "../../types/types";
-import { characters } from "../../types/types";
+import { characters, errorInFetch } from "../../types/types";
 import { genereateTemplete } from "../../helpers/genereateTemplete/generateAllStatsMocObject";
 import "./showAccountInfo.css";
 
@@ -22,6 +22,7 @@ const ShowAccountInfo: () => JSX.Element = () => {
   const [accountCharacters, setAccountCharacters] = useState([firstChar]);
   const [allStats, setAllStats] = useState(genereateTemplete());
   const { platformNumber, accountName } = useParams();
+  const history = useHistory();
 
   const classType: (classType: number) => string = (classType: number) => {
     switch (classType) {
@@ -37,16 +38,21 @@ const ShowAccountInfo: () => JSX.Element = () => {
   };
 
   const loading = async () => {
-    const charInfo: characters[] = await getAccountInfo(
+    const charInfo: characters[] | errorInFetch = await getAccountInfo(
       platformNumber,
       accountName
     );
+
+    if ((charInfo as errorInFetch).error) {
+      history.push('/');
+    }
+
     const stats: allCharactersStats = await getAccountStats(
       platformNumber,
       accountName
     );
 
-    setAccountCharacters(charInfo);
+    setAccountCharacters(charInfo as characters[]);
     setAllStats(stats);
     setIsLoading(true);
   };
