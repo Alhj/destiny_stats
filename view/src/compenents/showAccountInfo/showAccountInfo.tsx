@@ -44,7 +44,7 @@ const ShowAccountInfo: () => JSX.Element = () => {
     );
 
     if ((charInfo as errorInFetch).error) {
-      history.push('/');
+      history.push("/");
     }
 
     const stats: allCharactersStats = await getAccountStats(
