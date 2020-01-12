@@ -3,10 +3,19 @@
   flex-wrap: wrap;
 }
 
+.primary, .special, .heavy {
+  border-top: 1px solid black;
+  background-color: #929191;
+}
+
 
 /*
   flex: 3 column layout
 */
 .item {
   flex: 3 33%;
+}
+
+.item h2{
+  color: whitesmoke;
 }

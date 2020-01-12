@@ -55,6 +55,7 @@ const ShowAccountInfo: () => JSX.Element = () => {
     if (!isLoading) {
       loading();
     }
+    console.log("update");
   });
 
   if (!isLoading) {
@@ -63,7 +64,7 @@ const ShowAccountInfo: () => JSX.Element = () => {
 
   const chars = accountCharacters.map(accountCharacter => (
     <div
-      className="class"
+      className="emblem"
       style={{
         backgroundImage:
           "url(" + url + accountCharacter.emblemBackgroundPath + ")",
@@ -71,7 +72,7 @@ const ShowAccountInfo: () => JSX.Element = () => {
       }}
       key={accountCharacter.classType}
     >
-      <div className="">
+      <div className="characterInfo">
         <h1 className="characterLigth">✦{accountCharacter.light}</h1>
         <h1 className="characterClassType">
           {classType(accountCharacter.classType)}
@@ -82,7 +83,7 @@ const ShowAccountInfo: () => JSX.Element = () => {
 
   return (
     <div>
-      <div className=''>{chars}</div>
+      <div className="">{chars}</div>
       <ShowAllTimeStats stats={allStats} />
     </div>
   );

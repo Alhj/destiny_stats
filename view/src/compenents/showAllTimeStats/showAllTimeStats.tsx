@@ -9,13 +9,12 @@ interface propsInterface {
 
 const showAllTimeStats = (props:propsInterface) => {
     const pvpStats = props.stats.pvp.allTime;
-    const pveStats = props.stats.pve.allTime;
+    //const pveStats = props.stats.pve.allTime;
 
-
-    console.log(pveStats)
   return(
     <div>
       <div className='primary'>
+        <h2>priamary weapon</h2>
         <div className='cointener'>
           <div className='item'>
             <h2>Handcanon kills: {pvpStats.weaponKillsHandCannon.basic.value}</h2>
@@ -41,6 +40,7 @@ const showAllTimeStats = (props:propsInterface) => {
         </div>
       </div>
       <div className='special'>
+        <h2> special weapon</h2>
         <div className='cointener'>
           <div className='item'>
             <h2>Sniper rifle kills: {pvpStats.weaponKillsSniper.basic.value}</h2>
@@ -51,6 +51,15 @@ const showAllTimeStats = (props:propsInterface) => {
           <div className='item'>
             <h2>Shotgun kills: {pvpStats.weaponKillsShotgun.basic.value}</h2>
           </div>
+        </div>
+      </div>
+      <div className='heavy'>
+        <h2>heavy weapon</h2>
+        <div className='cointener'>
+          <div className='item'><h2>Rocket launchers kills: {pvpStats.weaponKillsRocketLauncher.basic.value}</h2></div>
+          <div className='item'><h2>Swords kills: {pvpStats.weaponKillsSword.basic.value}</h2></div>
+          <div className='item'><h2>Machinegun kills: {pvpStats.weaponKillsMachineGun.basic.value}</h2></div>
+          <div className='item'><h2>Grenade launcher kills: {pvpStats.weaponKillsGrenadeLauncher.basic.value}</h2></div>
         </div>
       </div>
     </div>

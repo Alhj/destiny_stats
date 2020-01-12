@@ -1,3 +1,13 @@
+.characterInfo {
+  display: flex;
+  justify-content: flex-start;
+  width: 40px;
+}
+
+.emblem {
+  width: 325px;
+}
+
 .characterLigth {
   color: rgb(245, 220, 86);
 }
