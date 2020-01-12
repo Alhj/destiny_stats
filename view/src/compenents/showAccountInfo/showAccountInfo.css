@@ -1,13 +1,20 @@
 .characterInfo {
   display: flex;
-  justify-content: flex-start;
-  width: 40px;
+  justify-content: space-between;
+  margin-bottom: 0.8em;
+}
+
+.characterInfo h2 {
+  color: white;
+  align-self: flex_start;
 }
 
 .emblem {
-  width: 325px;
+  width:31%;
+  background-size: cover;
 }
 
 .characterLigth {
+  order: 2;
   color: rgb(245, 220, 86);
 }

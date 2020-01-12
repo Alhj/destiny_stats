@@ -74,9 +74,9 @@ const ShowAccountInfo: () => JSX.Element = () => {
     >
       <div className="characterInfo">
         <h1 className="characterLigth">✦{accountCharacter.light}</h1>
-        <h1 className="characterClassType">
+        <h2 className="characterClassType">
           {classType(accountCharacter.classType)}
-        </h1>
+        </h2>
       </div>
     </div>
   ));
