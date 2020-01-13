@@ -18,3 +18,16 @@
   order: 2;
   color: rgb(245, 220, 86);
 }
+.activitySelect {
+  display: flex;
+  justify-content: space-between;
+  width: 5%;
+}
+
+.activitySelect h3{
+  border-bottom: 1.5px solid black;
+  border-right: 1.5px solid black;
+  border-left: 1.5px solid black;
+  padding-bottom: 3px;
+  margin: 1px;
+}

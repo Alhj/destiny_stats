@@ -10,13 +10,23 @@
   background-color: #929191;
 }
 
-/*
-  flex: 3 column layout
-*/
-.item {
-  flex: 3 33%;
+.primary h2,
+.special h2,
+.heavy h2 {
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-bottom-right-radius: 99px;
+  display: flex;
+  width: 12%;
+  margin-bottom: 2px;
+  padding-bottom: 5px;
+  margin-top: 0px;
 }
 
-.item h2 {
+.item {
+  flex: 2 33%;
+}
+
+.item h3 {
   color: whitesmoke;
 }

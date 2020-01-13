@@ -90,6 +90,10 @@ const ShowAccountInfo = () => {
   return (
     <div>
       <div className="">{chars}</div>
+      <div className="activitySelect">
+        <h3>PvP</h3>
+        <h3>PvE</h3>
+      </div>
       <ShowAllTimeStats stats={allStats} />
     </div>
   );
