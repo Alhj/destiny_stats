@@ -5,16 +5,13 @@ const apiKey = require('../lib/apiKey/apiKey')
 const getPlayerProfil = require('../lib/fetch/getPlayerProfil')
 const getAccountStats = require('../lib/fetch/getAccountStats')
 
-side.route('/:membershipType/:userName')
+side.route('/:membershipType/:membershipId')
   .get(async (req, res) => {
     if (req.header('authorization') && apiKey.checkKey(req.header('authorization').substring(7))) {
 
       try {
 
-        const playerProfil = await getPlayerProfil(req.params.membershipType, req.params.userName);
-
-
-        const accountStats = await getAccountStats(req.params.membershipType, playerProfil.data.userInfo.membershipId);
+        const accountStats = await getAccountStats(req.params.membershipType, req.params.membershipId);
 
         const obj = {
           statusCode: 200,

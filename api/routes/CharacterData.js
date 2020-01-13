@@ -5,12 +5,12 @@ const getPlayerProfil = require('../lib/fetch/getPlayerProfil');
 const getCharacterData = require('../lib/fetch/getCharacterData');
 const apiKey = require('../lib/apiKey/apiKey');
 
-side.route('/:membershipType/:displayName')
+side.route('/:membershipType/:membershipId')
   .get(async (req, res) => {
 
     if (req.header('authorization') && apiKey.checkKey(req.header('authorization').substring(7))) {
       try {
-        const playerProfil = await getPlayerProfil(req.params.membershipType, req.params.displayName);
+        const playerProfil = await getPlayerProfil(req.params.membershipType, req.params.membershipId);
 
         const characters = []
 
