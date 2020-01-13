@@ -11,7 +11,7 @@ import "./showAccountInfo.css";
 
 const url: string = "https://www.bungie.net";
 
-const ShowAccountInfo: () => JSX.Element = () => {
+const ShowAccountInfo = () => {
   const firstChar: characters = {
     emblemBackgroundPath: "",
     classType: 0,

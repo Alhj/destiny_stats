@@ -26,7 +26,7 @@ const SearchBar: () => JSX.Element = () => {
 
   const handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    history.push(`/account/${platformNumber}/${userName}/`);
+    history.push(`/getProfil/${platformNumber}/${userName}/`);
   };
 
   return (

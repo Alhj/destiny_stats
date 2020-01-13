@@ -38,3 +38,6 @@ side.route('/:membershipType/:accountName')
       res.status(401).send(obj);
     }
   })
+
+
+  module.exports = side

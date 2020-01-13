@@ -60,6 +60,12 @@ export interface errorInFetch {
   error: number
 }
 
+export interface profilId {
+  statusCode: number
+  message: string
+  Respons: string
+}
+
 
 interface activitiesEnteredStats {
   statId: string
