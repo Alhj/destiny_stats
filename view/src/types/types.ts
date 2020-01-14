@@ -18,20 +18,20 @@ export interface responsAllChars {
 
 export interface allCharactersStats {
   pve: {
-    allTime: allPvP
+    allTime: allStats
   }
   pvp: {
-    allTime: allPvP
+    allTime: allStats
   }
 }
 
 export interface charactersStats {
   characterId: string
   deleted: boolean
-  result: allPvP
+  result: allStats
 }
 
-export interface allPvP {
+export interface allStats {
   activitiesEntered: activitiesEnteredStats
   weaponKillsAutoRifle: weaponKillsStats
   weaponKillsFusionRifle: weaponKillsStats

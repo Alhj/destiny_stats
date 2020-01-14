@@ -1,4 +1,4 @@
-import { allCharactersStats, allPvP } from '../../types/types';
+import { allCharactersStats, allStats } from '../../types/types';
 
 const genereateTemplete: () => allCharactersStats = () => {
   const temp: allCharactersStats = {
@@ -14,8 +14,8 @@ const genereateTemplete: () => allCharactersStats = () => {
 };
 
 
-const gerenteStats: () => allPvP = () => {
-  const temp: allPvP = {
+const gerenteStats: () => allStats = () => {
+  const temp: allStats = {
     activitiesEntered: {
       statId: 'none',
       basic: {

@@ -21,6 +21,7 @@ const ShowAccountInfo = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [accountCharacters, setAccountCharacters] = useState([firstChar]);
   const [allStats, setAllStats] = useState(genereateTemplete());
+  const [witchStats, setWitchStats] = useState(false);
   const { platformNumber, accountName } = useParams();
   const history = useHistory();
 
@@ -61,7 +62,6 @@ const ShowAccountInfo = () => {
     if (!isLoading) {
       loading();
     }
-    console.log("update");
   });
 
   if (!isLoading) {
@@ -87,14 +87,32 @@ const ShowAccountInfo = () => {
     </div>
   ));
 
+  const showWitchStats = () => {
+    if (witchStats) {
+      return <ShowAllTimeStats stats={allStats.pvp.allTime} />;
+    } else {
+      return <ShowAllTimeStats stats={allStats.pve.allTime} />;
+    }
+  };
+
+  const changeAcctivity = (change: boolean) => {
+    if (change) {
+      setWitchStats(true);
+    } else {
+      setWitchStats(false);
+    }
+
+    console.log(witchStats);
+  };
+
   return (
     <div>
       <div className="">{chars}</div>
       <div className="activitySelect">
-        <h3>PvP</h3>
-        <h3>PvE</h3>
+        <h3 onClick={() => changeAcctivity(true)}>PvP</h3>
+        <h3 onClick={() => changeAcctivity(false)}>PvE</h3>
       </div>
-      <ShowAllTimeStats stats={allStats} />
+      {showWitchStats()}
     </div>
   );
 };
