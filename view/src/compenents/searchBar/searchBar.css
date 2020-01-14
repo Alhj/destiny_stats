@@ -59,8 +59,16 @@
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 340px) {
   .SearchBar {
     display: block;
+  }
+  .SearchBar input {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .SearchBar input, .SearchBar select, .SearchBar button {
+    margin: 4px
   }
 }
