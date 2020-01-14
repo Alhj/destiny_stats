@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./searchBar.css";
 import { useHistory } from "react-router-dom";
+import "./searchBar.css";
 
 const SearchBar: () => JSX.Element = () => {
   const [platform, setplatformor] = useState("steam");
@@ -26,6 +26,7 @@ const SearchBar: () => JSX.Element = () => {
 
   const handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setUserName("");
     history.push(`/getProfil/${platformNumber}/${userName}/`);
   };
 
@@ -46,6 +47,7 @@ const SearchBar: () => JSX.Element = () => {
             handleInputChange(e)
           }
         />
+        <button type="submit">search</button>
       </form>
     </div>
   );

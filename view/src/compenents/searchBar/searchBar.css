@@ -15,11 +15,19 @@
   height: 100%;
   border: none;
   padding: 0;
-  border-top-right-radius: 99px;
-  border-bottom-right-radius: 99px;
 }
 
-.SearchBar select, .SearchBar input {
+.SearchBar select, .SearchBar input, .SearchBar button {
   font-size: 1.1em;
   padding: 0 10px;
+}
+
+.SearchBar button {
+  height: 100%;
+  border: none;
+  border-left: 0.05em solid black;
+  cursor: pointer;
+  background-color: white;
+  border-top-right-radius: 99px;
+  border-bottom-right-radius: 99px;
 }

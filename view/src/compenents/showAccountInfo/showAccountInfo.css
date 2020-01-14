@@ -36,3 +36,10 @@
   padding-right: 3px;
   padding-top: 2px;
 }
+
+@media only screen and (max-width: 600px) {
+  .emblem {
+    width: 50%;
+    background-size: cover;
+  }
+}
