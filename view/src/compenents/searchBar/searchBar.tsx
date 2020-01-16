@@ -39,7 +39,6 @@ const SearchBar: () => JSX.Element = () => {
           <option value={["ps4 2"]}>ps4</option>
         </select>
         <input
-          id="playerSearch"
           type="text"
           value={userName}
           placeholder="serach..."

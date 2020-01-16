@@ -7,8 +7,6 @@ const getAccountStats = require('../lib/fetch/getAccountStats')
 
 side.route('/:membershipType/:membershipId')
   .get(async (req, res) => {
-    if (req.header('authorization') && apiKey.checkKey(req.header('authorization').substring(7))) {
-
       try {
 
         const accountStats = await getAccountStats(req.params.membershipType, req.params.membershipId);
@@ -36,15 +34,6 @@ side.route('/:membershipType/:membershipId')
 
         res.status(400).send(obj)
       }
-
-    } else {
-      const obj = {
-        status: 403,
-        message: 'no api key in the header or modife key'
-      }
-
-      res.status(403).send(obj);
-    }
   })
 
 

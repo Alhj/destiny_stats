@@ -7,7 +7,6 @@ const searchPlayerProfil = require('../lib/fetch/searchPlayerProfil')
 
 side.route('/:membershipType/:accountName')
   .get(async (req, res) => {
-    if (req.header('authorization') && apiKey.checkKey(req.header('authorization').substring(7))) {
       try{
        const playerProfil = await searchPlayerProfil(req.params.membershipType, req.params.accountName)
 
@@ -28,15 +27,6 @@ side.route('/:membershipType/:accountName')
 
         res.status(400).send(obj)
       }
-
-    } else {
-      const obj = {
-        status: 401,
-        message: 'no api key in the header or modife key'
-      }
-
-      res.status(401).send(obj);
-    }
   })
 
 

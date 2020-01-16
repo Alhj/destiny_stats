@@ -7,8 +7,6 @@ const apiKey = require('../lib/apiKey/apiKey');
 
 side.route('/:membershipType/:membershipId')
   .get(async (req, res) => {
-
-    if (req.header('authorization') && apiKey.checkKey(req.header('authorization').substring(7))) {
       try {
         const playerProfil = await getPlayerProfil(req.params.membershipType, req.params.membershipId);
 
@@ -35,16 +33,6 @@ side.route('/:membershipType/:membershipId')
 
           res.status(400).send(obj)
       }
-
-    } else {
-
-      const obj = {
-        statusCode: 403,
-        message: 'no api key in header',
-      }
-
-      res.status(403).send(obj);
-    }
   })
 
 
