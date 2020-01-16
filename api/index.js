@@ -8,7 +8,9 @@ const app = express()
 const port = process.env.PORT || 3080
 //const node_env = process.env.NODE_ENV || 'development'
 
-app.use(cors())
+app.use(cors({
+  exposedHeaders:['authorization']
+}))
 
 app.use('/character', require('./routes/CharacterData'))
 app.use('/apiKey', require('./routes/ApiKey'))
