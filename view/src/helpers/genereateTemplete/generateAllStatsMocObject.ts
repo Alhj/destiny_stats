@@ -155,7 +155,91 @@ const gerenteStats: () => allStats = () => {
         value: 0,
         displayValue: '0',
       }
-    }
+    },
+    weaponPrecisionKillsAutoRifle: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsBow: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsFusionRifle: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsHandCannon: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsMelee: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsPulseRifle: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsScoutRifle: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsShotgun: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsSideArm: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsSniper: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsSubmachinegun: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    weaponPrecisionKillsTraceRifle: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
   };
 
   return temp;

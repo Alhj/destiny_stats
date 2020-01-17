@@ -44,8 +44,8 @@ export interface allStats {
   weaponKillsTraceRifle: weaponKillsStats
   weaponPrecisionKillsTraceRifle: weaponKillsStats
   weaponKillsMachineGun: weaponKillsStats
-  weaponPrecisionKillsMachineGun: weaponKillsStats
   weaponKillsMelee: weaponKillsStats
+  weaponPrecisionKillsMelee: weaponKillsStats
   weaponKillsPulseRifle: weaponKillsStats
   weaponPrecisionKillsPulseRifle: weaponKillsStats
   weaponKillsRocketLauncher: weaponKillsStats
@@ -58,7 +58,7 @@ export interface allStats {
   weaponKillsSubmachinegun: weaponKillsStats
   weaponPrecisionKillsSubmachinegun: weaponKillsStats
   weaponKillsSuper: weaponKillsStats
-  weaponKillsSideArm: weaponKillsStats
+  weaponKillsSideArm: weaponKillsStats  
   weaponPrecisionKillsSideArm: weaponKillsStats
   weaponKillsSword: weaponKillsStats
   weaponKillsRelic: weaponKillsStats
