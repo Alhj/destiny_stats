@@ -34,24 +34,36 @@ export interface charactersStats {
 export interface allStats {
   activitiesEntered: activitiesEnteredStats
   weaponKillsAutoRifle: weaponKillsStats
+  weaponPrecisionKillsAutoRifle: weaponKillsStats
   weaponKillsFusionRifle: weaponKillsStats
+  weaponPrecisionKillsFusionRifle: weaponKillsStats
   weaponKillsGrenade: weaponKillsStats
   weaponKillsGrenadeLauncher: weaponKillsStats
   weaponKillsHandCannon: weaponKillsStats
+  weaponPrecisionKillsHandCannon: weaponKillsStats
   weaponKillsTraceRifle: weaponKillsStats
+  weaponPrecisionKillsTraceRifle: weaponKillsStats
   weaponKillsMachineGun: weaponKillsStats
+  weaponPrecisionKillsMachineGun: weaponKillsStats
   weaponKillsMelee: weaponKillsStats
   weaponKillsPulseRifle: weaponKillsStats
+  weaponPrecisionKillsPulseRifle: weaponKillsStats
   weaponKillsRocketLauncher: weaponKillsStats
   weaponKillsScoutRifle: weaponKillsStats
+  weaponPrecisionKillsScoutRifle: weaponKillsStats
   weaponKillsShotgun: weaponKillsStats
+  weaponPrecisionKillsShotgun: weaponKillsStats
   weaponKillsSniper: weaponKillsStats
+  weaponPrecisionKillsSniper: weaponKillsStats
   weaponKillsSubmachinegun: weaponKillsStats
+  weaponPrecisionKillsSubmachinegun: weaponKillsStats
   weaponKillsSuper: weaponKillsStats
   weaponKillsSideArm: weaponKillsStats
+  weaponPrecisionKillsSideArm: weaponKillsStats
   weaponKillsSword: weaponKillsStats
   weaponKillsRelic: weaponKillsStats
   weaponKillsBow: weaponKillsStats
+  weaponPrecisionKillsBow: weaponKillsStats
 }
 
 export interface errorInFetch {
