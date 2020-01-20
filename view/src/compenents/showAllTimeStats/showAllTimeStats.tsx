@@ -1,4 +1,5 @@
 import React from "react";
+import { gerenteStats } from '../../helpers/genereateTemplete/generateAllStatsMocObject'
 import { allStats } from "../../types/types";
 
 import "./showAllTimeStats.css";
@@ -8,7 +9,11 @@ interface propsInterface {
 }
 
 const showAllTimeStats = (props: propsInterface) => {
-  const stats = props.stats;
+  let stats = props.stats;
+
+  if(!stats) {
+    stats = gerenteStats();
+  }
 
   return (
     <div>
@@ -23,7 +28,7 @@ const showAllTimeStats = (props: propsInterface) => {
         </div>
       </div>
       <div className="primary">
-        <h2>priamary weapon</h2>
+        <h2>primary  weapon</h2>
         <div className="cointener">
           <div className="item">
             <h3>Handcanon</h3>

@@ -248,5 +248,6 @@ const gerenteStats: () => allStats = () => {
 
 
 export {
-  genereateTemplete
+  genereateTemplete,
+  gerenteStats
 }
