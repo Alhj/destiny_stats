@@ -2,7 +2,6 @@ require('dotenv').config()
 const side = require('express').Router()
 
 const apiKey = require('../lib/apiKey/apiKey')
-const getPlayerProfil = require('../lib/fetch/getPlayerProfil')
 const getAccountStats = require('../lib/fetch/getAccountStats')
 
 side.route('/:membershipType/:membershipId')
@@ -11,15 +10,20 @@ side.route('/:membershipType/:membershipId')
 
       try {
 
-        const accountStats = await getAccountStats(req.params.membershipType, req.params.membershipId);
+        const accountStats = await getAccountStats.getAccountData(req.params.membershipType, req.params.membershipId)
+
+        const accountAcctivtyStats = await getAccountStats.getAccountDataActivty(req.params.membershipType, req.params.membershipId)
 
         const obj = {
           statusCode: 200,
           message: 'account stats from bungie api',
           Response: {
-            pve: accountStats.mergedAllCharacters.results.allPvE,
-            pvp: accountStats.mergedAllCharacters.results.allPvP,
-            charactersStats: accountStats.mergedAllCharacters.characters
+            weaponStats: {
+              pve: accountStats.mergedAllCharacters.results.allPvE,
+              pvp: accountStats.mergedAllCharacters.results.allPvP,
+              charactersStats: accountStats.mergedAllCharacters.characters
+            },
+            activityStats: accountAcctivtyStats
           }
         }
 

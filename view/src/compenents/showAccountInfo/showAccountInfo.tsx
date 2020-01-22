@@ -47,7 +47,7 @@ const ShowAccountInfo = () => {
       platformNumber,
       accountName
     );
-
+    
     if ((charInfo as errorInFetch).error) {
       history.push("/");
     }

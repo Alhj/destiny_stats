@@ -13,7 +13,10 @@ export interface characters {
 export interface responsAllChars {
   status: number,
   message: string
-  Response: allCharactersStats
+  Response: {
+    weaponStats: allCharactersStats,
+    activityStats: 
+  }
 }
 
 export interface allCharactersStats {
@@ -25,6 +28,14 @@ export interface allCharactersStats {
   }
 }
 
+export interface activityStats {
+  activitiesEntered: activitiesInfoStats
+  activitiesWon:activitiesInfoStats
+  kills:weaponKillsStats
+  killsDeathsRatio:activitiesInfoStats
+}
+
+
 export interface charactersStats {
   characterId: string
   deleted: boolean
@@ -32,7 +43,6 @@ export interface charactersStats {
 }
 
 export interface allStats {
-  activitiesEntered: activitiesEnteredStats
   weaponKillsAutoRifle: weaponKillsStats
   weaponPrecisionKillsAutoRifle: weaponKillsStats
   weaponKillsFusionRifle: weaponKillsStats
@@ -58,7 +68,7 @@ export interface allStats {
   weaponKillsSubmachinegun: weaponKillsStats
   weaponPrecisionKillsSubmachinegun: weaponKillsStats
   weaponKillsSuper: weaponKillsStats
-  weaponKillsSideArm: weaponKillsStats  
+  weaponKillsSideArm: weaponKillsStats
   weaponPrecisionKillsSideArm: weaponKillsStats
   weaponKillsSword: weaponKillsStats
   weaponKillsRelic: weaponKillsStats
@@ -79,7 +89,7 @@ export interface profilId {
 }
 
 
-interface activitiesEnteredStats {
+interface activitiesInfoStats {
   statId: string
   basic: {
     value: number,
