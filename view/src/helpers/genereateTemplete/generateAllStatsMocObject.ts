@@ -1,6 +1,7 @@
 import { allCharactersStats, allStats } from '../../types/types';
+import { activityPvEPVP, activityStats } from '../../types/types';
 
-const genereateTemplete: () => allCharactersStats = () => {
+const genereateTempleteWeaponStats: () => allCharactersStats = () => {
   const temp: allCharactersStats = {
     pve: {
       allTime: gerenteStats()
@@ -16,13 +17,6 @@ const genereateTemplete: () => allCharactersStats = () => {
 
 const gerenteStats: () => allStats = () => {
   const temp: allStats = {
-    activitiesEntered: {
-      statId: 'none',
-      basic: {
-        value: 0,
-        displayValue: '0',
-      }
-    },
     weaponKillsAutoRifle: {
       statId: 'none',
       basic: {
@@ -245,9 +239,58 @@ const gerenteStats: () => allStats = () => {
   return temp;
 };
 
+const genereateTempleteActivity = () => {
+  const temp: activityPvEPVP = {
+    pve: gerenteStatsActivity(),
+    pvp: gerenteStatsActivity()
+  };
 
+  return temp;
+}
+
+const gerenteStatsActivity = () => {
+  const obj: activityStats = {
+    activitiesEntered: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    activitiesWon: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    }, kills: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    killsDeathsRatio: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    },
+    precisionKills: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
+    }
+  };
+
+  return obj;
+}
 
 export {
-  genereateTemplete,
-  gerenteStats
+  genereateTempleteWeaponStats,
+  gerenteStats,
+  genereateTempleteActivity
 }

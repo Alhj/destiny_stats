@@ -23,7 +23,10 @@ side.route('/:membershipType/:membershipId')
               pvp: accountStats.mergedAllCharacters.results.allPvP,
               charactersStats: accountStats.mergedAllCharacters.characters
             },
-            activityStats: accountAcctivtyStats
+            activityStats: {
+              pve: accountAcctivtyStats.allPvE.allTime,
+              pvp: accountAcctivtyStats.allPvP.allTime
+            }
           }
         }
 

@@ -11,11 +11,11 @@ export interface characters {
 }
 
 export interface responsAllChars {
-  status: number,
+  status: number
   message: string
   Response: {
-    weaponStats: allCharactersStats,
-    activityStats: 
+    weaponStats: allCharactersStats
+    activitystats: activityPvEPVP
   }
 }
 
@@ -28,11 +28,17 @@ export interface allCharactersStats {
   }
 }
 
+export interface activityPvEPVP {
+  pve: activityStats
+  pvp: activityStats
+}
+
 export interface activityStats {
   activitiesEntered: activitiesInfoStats
-  activitiesWon:activitiesInfoStats
-  kills:weaponKillsStats
-  killsDeathsRatio:activitiesInfoStats
+  activitiesWon: activitiesInfoStats
+  kills: weaponKillsStats
+  killsDeathsRatio: activitiesInfoStats
+  precisionKills: weaponKillsStats
 }
 
 
