@@ -1,5 +1,4 @@
 import { action } from '../types/types';
-import { stat } from 'fs';
 
 const platformReducer = (state: string = 'Steam', action: action) => {
   switch (action.type) {

@@ -1,22 +1,43 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { steam } from "../../actions/Steam";
+import { ps4 } from "../../actions/ps4";
+import { xbox } from "../../actions/xbox";
+
 import "./searchBar.css";
 
+interface redux {
+  platform: string;
+  platformNumber: number;
+}
+
 const SearchBar: () => JSX.Element = () => {
-  const [platform, setplatformor] = useState("steam");
   const [platformNumber, setPlatformorNumber] = useState("3");
   const [userName, setUserName] = useState("");
   const history = useHistory();
+
+  const dispatch = useDispatch();
+
+  const platform = useSelector((state: redux) => {
+    return state.platform;
+  });
 
   const handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     event.preventDefault();
-    const formatAndNumber: string[] = event.target.value.split(" ");
-
-    setplatformor(formatAndNumber[0]);
-    setPlatformorNumber(formatAndNumber[1]);
+    switch (event.target.value) {
+      case "STEAM":
+        dispatch(steam());
+        break;
+      case "XBOX":
+        dispatch(xbox());
+        break;
+      case "PS4":
+        dispatch(ps4());
+        break;
+    }
   };
 
   const handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void = (
@@ -33,14 +54,15 @@ const SearchBar: () => JSX.Element = () => {
 
   return (
     <div className="SearchBar">
+      <h3>{platform}</h3>
       <form onSubmit={e => handelSubmit(e)}>
-        <select onChange={event => handleChange(event)} defaultValue={platform}>
-          <option value={["steam 3"]}>steam</option>
-          <option value={["xbox 1"]}>xbox</option>
-          <option value={["ps4 2"]}>ps4</option>
+        <select onChange={event => handleChange(event)} value={platform}>
+          <option value="STEAM">steam</option>
+          <option value="XBOX">xbox</option>
+          <option value="PS4">ps4</option>
         </select>
         <input
-          id="playerSearch"
+          className="playerSearch"
           type="text"
           value={userName}
           placeholder="serach..."
