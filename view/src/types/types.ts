@@ -1,3 +1,7 @@
+export interface action {
+  type: string
+}
+
 export interface respons {
   statusCode: number
   message: string
