@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./searchBar.css";
 
 const SearchBar: () => JSX.Element = () => {

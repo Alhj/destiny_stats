@@ -6,4 +6,6 @@ const ps4 = () => {
   }
 }
 
-export default ps4;
+export {
+  ps4
+};

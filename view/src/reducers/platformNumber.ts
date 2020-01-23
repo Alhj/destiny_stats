@@ -2,7 +2,7 @@ interface platformTypes {
   type: string
 }
 
-const platformNumberReducer = (state = 1, action: platformTypes) => {
+const platformNumberReducer = (state:number = 1, action: platformTypes) => {
   switch (action.type) {
     case 'STEAM':
       state = 3;

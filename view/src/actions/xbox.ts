@@ -1,12 +1,13 @@
 import { action } from '../types/types';
 
-const steam = () => {
+const xbox = () => {
   const obj: action = {
-    type: 'STEAM'
-  };
+    type: 'XBOX'
+  }
   return obj;
-}
+};
+
 
 export {
-  steam
+  xbox
 };
