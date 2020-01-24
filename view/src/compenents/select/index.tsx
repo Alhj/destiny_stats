@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { actionTypes } from '../../types/types';
+
+/*import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { steam } from "../../actions/Steam";
 import { ps4 } from "../../actions/ps4";
@@ -56,3 +58,4 @@ const Select = () => {
 };
 
 export default Select;
+*/
