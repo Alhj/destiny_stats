@@ -1,6 +1,5 @@
 import React from "react";
-import SearchBar from "../searchBar/searchBar";
-import Select from '../select';
+import SearchBar from "../searchBar";
 import "./startSearch.css";
 
 
@@ -9,7 +8,6 @@ const StartSearch: (props: any) => JSX.Element = props => {
     <div>
       <h1>account name</h1>
       <SearchBar />
-      <Select />
     </div>
   );
 };

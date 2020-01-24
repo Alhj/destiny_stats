@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router";
 
-import Loading from "../loading/loading";
-import ShowAllTimeStats from "../showAllTimeStats/showAllTimeStats";
+import Loading from "../loading";
+import ShowAllTimeStats from "../showAllTimeStats";
 import { getAccountInfo, getAccountStats } from "../../helpers/getAccountInfo";
 import { characters, errorInFetch } from "../../types/types";
 import {

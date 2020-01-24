@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Header from "./compenents/header/header";
-import StartSearch from "./compenents/startSearch/startSearch";
-import ShowAccountInfo from "./compenents/showAccountInfo/showAccountInfo";
-import GetPlayerProfil from "./compenents/getPlayerProfil/getPlayerProfil";
+import Header from "./compenents/header";
+import StartSearch from "./compenents/startSearch";
+import ShowAccountInfo from "./compenents/showAccountInfo";
+import GetPlayerProfil from "./compenents/getPlayerProfil";
 import Cointener from './compenents/cointener/cointener';
 
 const App: React.FC = () => {

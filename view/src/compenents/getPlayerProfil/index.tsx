@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router";
 import { getAccountProfil } from "../../helpers/getAccountInfo";
 import { profilId, errorInFetch } from "../../types/types";
 
-import Loading from "../loading/loading";
+import Loading from "../loading";
 
 const GetPlayerProfil = () => {
   const { membershipType, displayName } = useParams();
