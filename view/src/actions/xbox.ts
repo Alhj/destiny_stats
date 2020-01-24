@@ -1,7 +1,7 @@
-import { action } from '../types/types';
+import { actionTypes } from '../types/types';
 
 const xbox = () => {
-  const obj: action = {
+  const obj: actionTypes = {
     type: 'XBOX'
   }
   return obj;

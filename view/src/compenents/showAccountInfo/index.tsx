@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router";
 
 import Loading from "../loading";
 import ShowAllTimeStats from "../showAllTimeStats";
+import ActivityStats from '../activityStats';
 import { getAccountInfo, getAccountStats } from "../../helpers/getAccountInfo";
 import { characters, errorInFetch } from "../../types/types";
 import {
@@ -108,6 +109,7 @@ const ShowAccountInfo = () => {
   return (
     <div>
       <div className="">{chars}</div>
+      <ActivityStats stats={activityStats}/>
       <div className="activitySelect">
         <h3
           style={{ backgroundColor: witchStats? 'white' : 'darkgrey' }}

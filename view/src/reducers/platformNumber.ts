@@ -1,8 +1,6 @@
-interface platformTypes {
-  type: string
-}
+import { actionTypes } from '../types/types';
 
-const platformNumberReducer = (state:number = 1, action: platformTypes) => {
+const platformNumberReducer = (state:number = 1, action: actionTypes) => {
   switch (action.type) {
     case 'STEAM':
       state = 3;

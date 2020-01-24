@@ -1,6 +1,6 @@
-import { action } from '../types/types';
+import { actionTypes } from '../types/types';
 
-const platformReducer = (state: string = 'Steam', action: action) => {
+const platformReducer = (state: string = 'Steam', action: actionTypes) => {
   switch (action.type) {
     case 'STEAM':
       state = 'Steam';
@@ -11,8 +11,6 @@ const platformReducer = (state: string = 'Steam', action: action) => {
     case 'XBOX':
       state = 'Xbox';
       return state;
-    default:
-      return state
   }
 }
 

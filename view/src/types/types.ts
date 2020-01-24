@@ -1,4 +1,4 @@
-export interface action {
+export interface actionTypes {
   type: string | number
 }
 
