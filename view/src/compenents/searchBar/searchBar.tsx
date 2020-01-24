@@ -16,12 +16,16 @@ const SearchBar: () => JSX.Element = () => {
   const [platformNumber, setPlatformorNumber] = useState("3");
   const [userName, setUserName] = useState("");
   const history = useHistory();
-
   const dispatch = useDispatch();
 
   const platform = useSelector((state: redux) => {
     return state.platform;
   });
+  const testPlatformNumber = useSelector((state: redux) => {
+    return state.platformNumber;
+  });
+
+  console.log(testPlatformNumber);
 
   const handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -54,9 +58,8 @@ const SearchBar: () => JSX.Element = () => {
 
   return (
     <div className="SearchBar">
-      <h3>{platform}</h3>
       <form onSubmit={e => handelSubmit(e)}>
-        <select onChange={event => handleChange(event)} value={platform}>
+        <select onChange={event => handleChange(event)} defaultValue={platform}>
           <option value="STEAM">steam</option>
           <option value="XBOX">xbox</option>
           <option value="PS4">ps4</option>

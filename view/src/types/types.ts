@@ -1,5 +1,5 @@
 export interface action {
-  type: string
+  type: string | number
 }
 
 export interface respons {
