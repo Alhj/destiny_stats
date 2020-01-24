@@ -25,8 +25,6 @@ const ShowAccountInfo = () => {
   const [allStats, setAllStats] = useState(genereateTempleteWeaponStats());
   const [activityStats, setActivityStats] = useState(genereateTempleteActivity());
   const [witchStats, setWitchStats] = useState(true);
-  const [pvpBackgroundColor, setPvpBackgroundColor] = useState("white");
-  const [pveBackgroundColor, setPveBackgroundColor] = useState("darkgrey");
   const { platformNumber, accountName } = useParams();
 
   const history = useHistory();
@@ -102,12 +100,8 @@ const ShowAccountInfo = () => {
   const changeAcctivity = (change: boolean) => {
     if (change) {
       setWitchStats(true);
-      setPvpBackgroundColor("white");
-      setPveBackgroundColor("darkgrey");
     } else {
       setWitchStats(false);
-      setPvpBackgroundColor("darkgrey");
-      setPveBackgroundColor("white");
     }
   };
 
@@ -116,13 +110,13 @@ const ShowAccountInfo = () => {
       <div className="">{chars}</div>
       <div className="activitySelect">
         <h3
-          style={{ backgroundColor: pvpBackgroundColor }}
+          style={{ backgroundColor: witchStats? 'white' : 'darkgrey' }}
           onClick={() => changeAcctivity(true)}
         >
           PvP
         </h3>
         <h3
-          style={{ backgroundColor: pveBackgroundColor }}
+          style={{ backgroundColor: witchStats? 'darkgrey' : 'white' }}
           onClick={() => changeAcctivity(false)}
         >
           PvE
