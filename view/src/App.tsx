@@ -5,7 +5,8 @@ import Header from "./compenents/header";
 import StartSearch from "./compenents/startSearch";
 import ShowAccountInfo from "./compenents/showAccountInfo";
 import GetPlayerProfil from "./compenents/getPlayerProfil";
-import Cointener from './compenents/cointener/cointener';
+// import Cointener from './compenents/cointener/cointener';
+import NoCharacter from './compenents/noCharacterFound/';
 
 const App: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const App: React.FC = () => {
           path="/getProfil/:membershipType/:displayName"
           component={GetPlayerProfil}
         />
-        <Route path='/test' component={Cointener}/>
+        <Route path='/noCharacter' component={NoCharacter}/>
       </Switch>
     </Router>
   );
