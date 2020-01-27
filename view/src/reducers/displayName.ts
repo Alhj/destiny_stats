@@ -1,6 +1,6 @@
 import { actionTypes } from '../types/types';
 
-const displayName = (state = 'none', action: actionTypes) => {
+const displayName = (state = '', action: actionTypes) => {
   switch (action.type) {
     case 'SETDISPLAYNAME':
       state = action.payload;

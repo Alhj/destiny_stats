@@ -118,8 +118,10 @@ const ShowAccountInfo = () => {
 
   return (
     <div>
-      <div className="">{chars}</div>
+      <div className='cointenerAcc'>
+      <div className="itemAcc">{chars}</div>
       <ActivityStats stats={activityStats} />
+      </div>
       <div className="activitySelect">
         <h3
           style={{ backgroundColor: witchStats ? "white" : "darkgrey" }}

@@ -8,7 +8,7 @@ interface stats {
 const ActivityStats = (props: stats) => {
   const activity = props.stats.pvp;
   return (
-    <div>
+    <div className='itemAcc'>
       <h3>
         activity enter: {activity.activitiesEntered ? activity.activitiesEntered.basic.value : 0}
       </h3>
