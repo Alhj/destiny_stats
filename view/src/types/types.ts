@@ -19,7 +19,7 @@ export interface responsAllChars {
   message: string
   Response: {
     weaponStats: allCharactersStats
-    activitystats: activityPvEPVP
+    activityStats: activityPvEPVP
   }
 }
 

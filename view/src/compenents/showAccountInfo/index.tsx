@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router";
 
 import Loading from "../loading";
 import ShowAllTimeStats from "../showAllTimeStats";
-import ActivityStats from '../activityStats';
+import ActivityStats from "../activityStatsPvP";
 import { getAccountInfo, getAccountStats } from "../../helpers/getAccountInfo";
 import { characters, errorInFetch } from "../../types/types";
 import {
@@ -23,7 +23,7 @@ const ShowAccountInfo = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [accountCharacters, setAccountCharacters] = useState([firstChar]);
-  const [allStats, setAllStats] = useState(genereateTempleteWeaponStats());
+  const [weaponsStats, setWeaponsStats] = useState(genereateTempleteWeaponStats());
   const [activityStats, setActivityStats] = useState(genereateTempleteActivity());
   const [witchStats, setWitchStats] = useState(true);
   const { platformNumber, accountName } = useParams();
@@ -54,16 +54,17 @@ const ShowAccountInfo = () => {
     }
 
     const stats = await getAccountStats(platformNumber, accountName);
-
+    console.log(stats);
     setAccountCharacters(charInfo as characters[]);
-    setAllStats(stats.weaponStats);
-    setActivityStats(stats.activitystats);
+    setWeaponsStats(stats.weaponStats);
+    setActivityStats(stats.activityStats);
     setIsLoading(true);
   };
 
   useEffect(() => {
     if (!isLoading) {
       loading();
+      document.title = 'Destiny Stats'
     }
   });
 
@@ -92,9 +93,9 @@ const ShowAccountInfo = () => {
 
   const showWitchStats = () => {
     if (witchStats) {
-      return <ShowAllTimeStats stats={allStats.pvp.allTime} />;
+      return <ShowAllTimeStats stats={weaponsStats.pvp.allTime} />;
     } else {
-      return <ShowAllTimeStats stats={allStats.pve.allTime} />;
+      return <ShowAllTimeStats stats={weaponsStats.pve.allTime} />;
     }
   };
 
@@ -109,16 +110,16 @@ const ShowAccountInfo = () => {
   return (
     <div>
       <div className="">{chars}</div>
-      <ActivityStats stats={activityStats}/>
+      <ActivityStats stats={activityStats} />
       <div className="activitySelect">
         <h3
-          style={{ backgroundColor: witchStats? 'white' : 'darkgrey' }}
+          style={{ backgroundColor: witchStats ? "white" : "darkgrey" }}
           onClick={() => changeAcctivity(true)}
         >
           PvP
         </h3>
         <h3
-          style={{ backgroundColor: witchStats? 'darkgrey' : 'white' }}
+          style={{ backgroundColor: witchStats ? "darkgrey" : "white" }}
           onClick={() => changeAcctivity(false)}
         >
           PvE
