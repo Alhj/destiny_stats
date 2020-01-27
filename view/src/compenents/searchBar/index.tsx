@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-/*import { useSelector, useDispatch } from "react-redux";
-import { steam } from "../../actions/Steam";
-import { ps4 } from "../../actions/ps4";
-import { xbox } from "../../actions/xbox";
-*/
+import { useDispatch } from 'react-redux'
+import { setDisplayName } from '../../action';
 import "./searchBar.css";
 
 interface redux {
@@ -17,6 +14,8 @@ const SearchBar: () => JSX.Element = () => {
   const [platformNumber, setPlatformorNumber] = useState("3");
   const [userName, setUserName] = useState("");
   const history = useHistory();
+
+  const dispatch = useDispatch()
 
   const handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -37,6 +36,7 @@ const SearchBar: () => JSX.Element = () => {
   const handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setUserName("");
+    dispatch(setDisplayName(userName))
     history.push(`/getProfil/${platformNumber}/${userName}/`);
   };
 

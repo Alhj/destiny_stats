@@ -1,5 +1,6 @@
 export interface actionTypes {
-  type: string | number
+  type: string,
+  payload: string
 }
 
 export interface respons {

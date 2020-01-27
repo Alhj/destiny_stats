@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router";
-
+import { useSelector } from "react-redux";
 import Loading from "../loading";
 import ShowAllTimeStats from "../showAllTimeStats";
 import ActivityStats from "../activityStatsPvP";
@@ -14,17 +14,27 @@ import "./showAccountInfo.css";
 
 const url: string = "https://www.bungie.net";
 
+interface state {
+  displayName: string;
+}
+
 const ShowAccountInfo = () => {
   const firstChar: characters = {
     emblemBackgroundPath: "",
     classType: 0,
     light: 0
   };
-
+  const displayName = useSelector((state: state) => {
+    return state.displayName;
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [accountCharacters, setAccountCharacters] = useState([firstChar]);
-  const [weaponsStats, setWeaponsStats] = useState(genereateTempleteWeaponStats());
-  const [activityStats, setActivityStats] = useState(genereateTempleteActivity());
+  const [weaponsStats, setWeaponsStats] = useState(
+    genereateTempleteWeaponStats()
+  );
+  const [activityStats, setActivityStats] = useState(
+    genereateTempleteActivity()
+  );
   const [witchStats, setWitchStats] = useState(true);
   const { platformNumber, accountName } = useParams();
 
@@ -54,7 +64,6 @@ const ShowAccountInfo = () => {
     }
 
     const stats = await getAccountStats(platformNumber, accountName);
-    console.log(stats);
     setAccountCharacters(charInfo as characters[]);
     setWeaponsStats(stats.weaponStats);
     setActivityStats(stats.activityStats);
@@ -64,7 +73,7 @@ const ShowAccountInfo = () => {
   useEffect(() => {
     if (!isLoading) {
       loading();
-      document.title = 'Destiny Stats'
+      document.title = `Destiny stats ${displayName}`;
     }
   });
 
