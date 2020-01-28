@@ -19,7 +19,7 @@ const getAccountData = async (membershipType, membershipId) => {
 }
 
 const getAccountDataActivty = async (membershipType, membershipId) => {
-  const url = `https://www.bungie.net/Platform/Destiny2/${membershipType}/Account/${membershipId}/Stats/?groups=1`
+  const url = `https://www.bungie.net/Platform/Destiny2/${membershipType}/Account/${membershipId}/Stats/?groups=0s`
 
   let config = {
     headers:{

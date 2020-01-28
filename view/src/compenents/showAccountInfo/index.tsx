@@ -3,7 +3,8 @@ import { useParams, useHistory } from "react-router";
 import { useSelector } from "react-redux";
 import Loading from "../loading";
 import ShowAllTimeStats from "../showAllTimeStats";
-import ActivityStats from "../activityStatsPvP";
+import ActivityStatsPvP from "../activityStatsPvP";
+import ActivityStatsPvE from '../activityStatsPvE';
 import { getAccountInfo, getAccountStats } from "../../helpers/getAccountInfo";
 import { characters, errorInFetch } from "../../types/types";
 import {
@@ -116,12 +117,17 @@ const ShowAccountInfo = () => {
     }
   };
 
+  const showActivity = () => {
+    if(witchStats) {
+      return <ActivityStatsPvP stats={activityStats}/>
+    } else {
+      return <ActivityStatsPvE stats={activityStats}/>
+    }
+  }
+
   return (
     <div>
-      <div className='cointenerAcc'>
       <div className="itemAcc">{chars}</div>
-      <ActivityStats stats={activityStats} />
-      </div>
       <div className="activitySelect">
         <h3
           style={{ backgroundColor: witchStats ? "white" : "darkgrey" }}
@@ -136,6 +142,7 @@ const ShowAccountInfo = () => {
           PvE
         </h3>
       </div>
+      {showActivity()}
       {showWitchStats()}
     </div>
   );

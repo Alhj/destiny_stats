@@ -44,6 +44,7 @@ export interface activityStats {
   kills: weaponKillsStats
   killsDeathsRatio: activitiesInfoStats
   precisionKills: weaponKillsStats
+  publicEventsCompleted:activitiesInfoStats
 }
 
 

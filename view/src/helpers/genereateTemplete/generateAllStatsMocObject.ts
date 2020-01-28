@@ -283,6 +283,13 @@ const gerenteStatsActivity = () => {
         value: 0,
         displayValue: '0',
       }
+    },
+    publicEventsCompleted: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
     }
   };
 
