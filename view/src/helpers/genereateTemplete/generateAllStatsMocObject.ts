@@ -290,6 +290,13 @@ const gerenteStatsActivity = () => {
         value: 0,
         displayValue: '0',
       }
+    },
+    heroicPublicEventsCompleted: {
+      statId: 'none',
+      basic: {
+        value: 0,
+        displayValue: '0',
+      }
     }
   };
 
