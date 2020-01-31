@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import Loading from "../loading";
 import ShowAllTimeStats from "../showAllTimeStats";
 import ActivityStatsPvP from "../activityStatsPvP";
-import ActivityStatsPvE from '../activityStatsPvE';
+import ActivityStatsPvE from "../activityStatsPvE";
+import OverAllStats from '../overAllStats';
 import { getAccountInfo, getAccountStats } from "../../helpers/getAccountInfo";
 import { characters, errorInFetch } from "../../types/types";
 import {
@@ -118,16 +119,21 @@ const ShowAccountInfo = () => {
   };
 
   const showActivity = () => {
-    if(witchStats) {
-      return <ActivityStatsPvP stats={activityStats}/>
+    if (witchStats) {
+      return <ActivityStatsPvP stats={activityStats} />;
     } else {
-      return <ActivityStatsPvE stats={activityStats}/>
+      return <ActivityStatsPvE stats={activityStats} />;
     }
-  }
+  };
 
   return (
     <div>
-      <div className="itemAcc">{chars}</div>
+      <div className="cointenerAccountInfo">
+        <div className="itemAccountInfo">
+          <div className="itemAcc">{chars}</div>
+        </div>
+        <OverAllStats/>
+      </div>
       <div className="activitySelect">
         <h3
           style={{ backgroundColor: witchStats ? "white" : "darkgrey" }}
