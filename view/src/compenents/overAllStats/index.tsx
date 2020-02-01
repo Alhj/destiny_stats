@@ -1,17 +1,18 @@
 import React from "react";
+import './style.css'
 
 const OverAllStats = () => {
   return (
     <div className="itemAccountInfo">
       <div className="AccountStatsAll">
         <div className="allTimeLow">
-          <p>1</p>
+          <h3>1</h3>
         </div>
         <div className="allTimeLow">
-          <p>2</p>
+          <h3>2</h3>
         </div>
         <div className="allTimeLow">
-          <p>3</p>
+          <h3>3</h3>
         </div>
       </div>
     </div>
