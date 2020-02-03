@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 const Medels = () => {
+  const [showMedels, setShowMedels] = useState(false);
+
+  const clickHandler = () => {
+    setShowMedels(showMedels ? false : true);
+  };
+
   return (
     <div className="medel">
       <h2>Medles</h2>
-      <div className="medels">
+      <div style={{ display: showMedels ? "flex" : "none" }} className="medels">
         <div className="medelsComponent">
           <img
             src="https://www.bungie.net/common/destiny2_content/icons/4f856cbc4a8d41d44167a05590e82251.png"
@@ -34,7 +40,7 @@ const Medels = () => {
           />
           <h3>Quick Strike: 0</h3>
         </div>
-        <div>
+        <div className="medelsComponent">
           <img
             src="https://www.bungie.net/common/destiny2_content/icons/icon_m67b503f29d3f1a739f88f9ae8371c1ec.png"
             alt="medalStreak10x"
@@ -63,6 +69,9 @@ const Medels = () => {
           <h3>Rift Breaker: 0</h3>
         </div>
       </div>
+      <span className="showStats" onClick={clickHandler}>
+        <h3>{showMedels ? "-" : "+"}</h3>
+      </span>
     </div>
   );
 };

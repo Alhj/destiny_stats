@@ -6,6 +6,7 @@ import ShowAllTimeStats from "../showAllTimeStats";
 import ActivityStatsPvP from "../activityStatsPvP";
 import ActivityStatsPvE from "../activityStatsPvE";
 import OverAllStats from '../overAllStats';
+import Medels from '../medels';
 import { getAccountInfo, getAccountStats } from "../../helpers/getAccountInfo";
 import { characters, errorInFetch } from "../../types/types";
 import {

@@ -2,18 +2,69 @@
   border-bottom: 2px solid;
   border-right: 2px solid;
   border-bottom-right-radius: 99px;
-  display: flex;
-  width: 5.5%;
+  width: 12%;
   margin-bottom: 2px;
   padding-bottom: 5px;
   margin-top: 0px;
 }
 
+
+.medel {
+  border-top: 2px solid;
+  background-color: #929191
+}
+
 .medels {
-  display: flex;
   flex-wrap: wrap;
 }
 
 .medels .medelsComponent{
   flex: 1 25%;
 }
+
+.showStats {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border-bottom: 2px solid;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  .medel h2 {
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-bottom-right-radius: 99px;
+    display: flex;
+    width: 27%;
+    margin-bottom: 2px;
+    padding-bottom: 5px;
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .medel h2 {
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-bottom-right-radius: 99px;
+    display: flex;
+    width: 33%;
+    margin-bottom: 2px;
+    padding-bottom: 5px;
+    margin-top: 0px;
+  }
+ }
+
+ @media only screen and (max-width: 580px) {
+   .medel h2 {
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-bottom-right-radius: 99px;
+    display: flex;
+    width: 36%;
+    margin-bottom: 2px;
+    padding-bottom: 5px;
+    margin-top: 0px;
+   }
+ }

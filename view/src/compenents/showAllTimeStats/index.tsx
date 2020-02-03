@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { gerenteStats } from "../../helpers/genereateTemplete/generateAllStatsMocObject";
 import { allStats } from "../../types/types";
 
@@ -8,18 +8,49 @@ interface propsInterface {
   stats: allStats;
 }
 
-const showAllTimeStats = (props: propsInterface) => {
+const ShowAllTimeStats = (props: propsInterface) => {
   let stats = props.stats;
+
+  const [showAbilitys, setShowAbilitys] = useState(true);
+
+  const [showPrimary, setShowPrimary] = useState(true);
+
+  const [showSpecial, setShowSpecial] = useState(true);
+
+  const [showHeavy, setShowHeavy] = useState(true);
 
   if (!stats) {
     stats = gerenteStats();
   }
 
+  const handelClick = (cases: number) => {
+    switch (cases) {
+      case 1:
+        setShowAbilitys(showAbilitys ? false : true);
+        break;
+
+      case 2:
+        setShowPrimary(showPrimary ? false : true);
+        break;
+
+      case 3:
+        setShowSpecial(showSpecial ? false : true);
+        break;
+
+      case 4:
+        setShowHeavy(showHeavy ? false : true);
+        break;
+    }
+  };
+
   return (
     <div>
       <div className="abilty">
         <h2>Abilitys</h2>
-        <div className="cointener">
+        <div
+          className="cointener"
+          style={{ display: showAbilitys ? "flex" : "none" }}
+        >
           <div className="item">
             <h3>Grenade kills: {stats.weaponKillsGrenade.basic.value}</h3>
           </div>
@@ -30,10 +61,15 @@ const showAllTimeStats = (props: propsInterface) => {
             <h3>Super kills: {stats.weaponKillsSuper.basic.value}</h3>
           </div>
         </div>
+        <span className="showStats" onClick={() => handelClick(1)}>
+          <h3>{showAbilitys ? "-" : "+"}</h3>
+        </span>
       </div>
-      <div className="primary">
+      <div
+        className="primary"
+      >
         <h2>primary weapon</h2>
-        <div className="cointener">
+        <div className="cointener"  style={{ display: showPrimary ? "flex" : "none" }}>
           <div className="item">
             <h3>Handcanon</h3>
             <div>
@@ -154,10 +190,16 @@ const showAllTimeStats = (props: propsInterface) => {
             </div>
           </div>
         </div>
+        <span className="showStats" onClick={() => handelClick(2)}>
+          <h3> {showPrimary ? "-" : "+"}</h3>
+        </span>
       </div>
       <div className="special">
         <h2> special weapon</h2>
-        <div className="cointener">
+        <div
+          className="cointener"
+          style={{ display: showSpecial ? "flex" : "none" }}
+        >
           <div className="item">
             <h3>Sniper rifle</h3>
             <div>
@@ -210,10 +252,13 @@ const showAllTimeStats = (props: propsInterface) => {
             </div>
           </div>
         </div>
+        <span className="showStats" onClick={() => handelClick(3)}>
+          <h3>{showSpecial ? "-" : "+"}</h3>
+        </span>
       </div>
       <div className="heavy">
         <h2>heavy weapon</h2>
-        <div className="cointener">
+        <div className="cointener"  style={{ display: showHeavy ? "flex" : "none" }}>
           <div className="item">
             <h3>Rocket launchers</h3>
             <div>
@@ -259,9 +304,12 @@ const showAllTimeStats = (props: propsInterface) => {
             </div>
           </div>
         </div>
+        <span className="showStats" onClick={() => handelClick(4)}>
+          <h3>{showHeavy ? "-" : "+"}</h3>
+        </span>
       </div>
     </div>
   );
 };
 
-export default showAllTimeStats;
+export default ShowAllTimeStats;

@@ -1,16 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import { activityPvEPVP } from "../../types/types";
-import './style.css'
+import "./style.css";
 interface stats {
   stats: activityPvEPVP;
 }
 
 const ActivityStats = (props: stats) => {
   const activity = props.stats.pvp;
+
+  const [show, setShow] = useState(true);
+
+  const handelClick = () => {
+    setShow(show ? false : true);
+  };
   return (
     <div className="activtyStats">
       <h2>activity</h2>
-      <div className="cointener">
+      <div className="cointener" style={{display: show? 'flex': 'none'}}>
         <div className="item">
           <h3>
             activity enter:{" "}
@@ -21,7 +27,8 @@ const ActivityStats = (props: stats) => {
         </div>
         <div className="item">
           <h3>
-            total kills: {activity.kills ? activity.kills.basic.displayValue : 0}
+            total kills:{" "}
+            {activity.kills ? activity.kills.basic.displayValue : 0}
           </h3>
         </div>
         <div className="item">
@@ -33,6 +40,9 @@ const ActivityStats = (props: stats) => {
           </h3>
         </div>
       </div>
+      <span className="showStats" onClick={() => handelClick}>
+            <h3>{show? '-': '+'}</h3>
+      </span>
     </div>
   );
 };
