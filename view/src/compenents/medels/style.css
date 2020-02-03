@@ -11,6 +11,7 @@
 
 .medels {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .medels .medelsComponent{

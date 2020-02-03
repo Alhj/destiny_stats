@@ -27,12 +27,40 @@ const Medels = () => {
           />
           <h3>Ruthless: 0</h3>
         </div>
+        <div className="medelsComponent">
+          <img
+            src="https://www.bungie.net/common/destiny2_content/icons/icon_mec86a0f21dfca81ee7cd008803a6fc47.png"
+            alt="medalQuickStrike"
+          />
+          <h3>Quick Strike: 0</h3>
+        </div>
         <div>
           <img
             src="https://www.bungie.net/common/destiny2_content/icons/icon_m67b503f29d3f1a739f88f9ae8371c1ec.png"
             alt="medalStreak10x"
           />
           <h3>Unyielding: 0</h3>
+        </div>
+        <div className="medelsComponent">
+          <img
+            src="https://www.bungie.net/common/destiny2_content/icons/e2240bfb6621ee8b7f0986cbadfbb112.png"
+            alt="medalDefeatTitanBrace"
+          />
+          <h3>Barricade Breaker: 0</h3>
+        </div>
+        <div className="medelsComponent">
+          <img
+            src="https://www.bungie.net/common/destiny2_content/icons/icon_mb96e1a8d0e9564b18d1c846bc1b07277.png"
+            alt="medalDefeatHunterDodge"
+          />
+          <h3>Dodge This: 0</h3>
+        </div>
+        <div className="medelsComponent">
+          <img
+            src="https://www.bungie.net/common/destiny2_content/icons/icon_m82bca046cefd86485ebffeed197fd57c.png"
+            alt="medalDefeatWarlockSigil"
+          />
+          <h3>Rift Breaker: 0</h3>
         </div>
       </div>
     </div>
