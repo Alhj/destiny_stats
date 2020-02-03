@@ -3,9 +3,6 @@
   border-top: solid black 1px;
 }
 
-.activtyStats h3 {
-  color: white;
-}
 
 .activtyStats h2 {
   border-bottom: 2px solid;
@@ -21,6 +18,10 @@
 .cointener {
   display: flex;
   flex-wrap: wrap;
+}
+
+.cointener h3 {
+  color: white;
 }
 
 .item {

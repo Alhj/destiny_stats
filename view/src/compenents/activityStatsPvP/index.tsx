@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import { activityPvEPVP } from "../../types/types";
-import "./style.css";
 interface stats {
   stats: activityPvEPVP;
 }
@@ -40,7 +39,7 @@ const ActivityStats = (props: stats) => {
           </h3>
         </div>
       </div>
-      <span className="showStats" onClick={() => handelClick}>
+      <span className="showStats" onClick={() => handelClick()}>
             <h3>{show? '-': '+'}</h3>
       </span>
     </div>
