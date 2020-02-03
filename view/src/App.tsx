@@ -6,8 +6,7 @@ import StartSearch from "./compenents/startSearch";
 import ShowAccountInfo from "./compenents/showAccountInfo";
 import GetPlayerProfil from "./compenents/getPlayerProfil";
 import NoCharacter from './compenents/noCharacterFound';
-import Loading from './compenents/loading';
-
+import Medels from './compenents/medels';
 const App: React.FC = () => {
   return (
     <Router>
@@ -23,7 +22,7 @@ const App: React.FC = () => {
           component={GetPlayerProfil}
         />
         <Route path='/noCharacter' component={NoCharacter}/>
-        <Route path='/loading' component={Loading}/>
+        <Route path='/medels' component={Medels}/>
       </Switch>
     </Router>
   );

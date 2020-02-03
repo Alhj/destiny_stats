@@ -1,0 +1,18 @@
+.medel h2 {
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-bottom-right-radius: 99px;
+  display: flex;
+  width: 5.5%;
+  margin-bottom: 2px;
+  padding-bottom: 5px;
+  margin-top: 0px;
+}
+
+.medels {
+  display: flex;
+}
+
+.medels .medelsComponent{
+  flex: 1 25%;
+}
