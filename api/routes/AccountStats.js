@@ -3,6 +3,7 @@ const side = require('express').Router()
 
 const apiKey = require('../lib/apiKey/apiKey')
 const getAccountStats = require('../lib/fetch/getAccountStats')
+const getAccountMedel = require('../lib/fetch/getAccountMedel');
 
 side.route('/:membershipType/:membershipId')
   .get(async (req, res) => {
@@ -13,6 +14,8 @@ side.route('/:membershipType/:membershipId')
         const accountStats = await getAccountStats.getAccountData(req.params.membershipType, req.params.membershipId)
 
         const accountAcctivtyStats = await getAccountStats.getAccountDataActivty(req.params.membershipType, req.params.membershipId)
+
+        const pvpMedels = await getAccountMedel(req.params.membershipType, req.params.membershipId);
 
         const obj = {
           statusCode: 200,
@@ -26,10 +29,10 @@ side.route('/:membershipType/:membershipId')
             activityStats: {
               pve: accountAcctivtyStats.allPvE.allTime,
               pvp: accountAcctivtyStats.allPvP.allTime
-            }
+            },
+            pvpMedels: pvpMedels.allPvP.allTime
           }
         }
-
 
         res.status(200).send(obj);
 
