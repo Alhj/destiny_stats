@@ -7,7 +7,7 @@ interface props {
 }
 
 
-const Medels = () => {
+const Medels = (props:props) => {
   const [showMedels, setShowMedels] = useState(false);
 
   const clickHandler = () => {

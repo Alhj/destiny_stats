@@ -8,7 +8,7 @@ interface propsInterface {
   stats: allStats;
 }
 
-const ShowAllTimeStats = (props: propsInterface) => {
+const ShowWeaponStats = (props: propsInterface) => {
   let stats = props.stats;
 
   const [showAbilitys, setShowAbilitys] = useState(true);
@@ -312,4 +312,4 @@ const ShowAllTimeStats = (props: propsInterface) => {
   );
 };
 
-export default ShowAllTimeStats;
+export default ShowWeaponStats;

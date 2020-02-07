@@ -12,10 +12,7 @@ import {
   getAccountStats
 } from "../../helpers/fetch/getAccountInfo";
 import { characters, errorInFetch } from "../../types/types";
-import {
-  genereateTempleteWeaponStats,
-  genereateTempleteActivity
-} from "../../helpers/genereateTemplete/generateAllStatsMocObject";
+import { medels, allCharactersStats, activityPvEPVP } from "../../types/types";
 import "./showAccountInfo.css";
 
 const url: string = "https://www.bungie.net";
@@ -35,12 +32,11 @@ const ShowAccountInfo = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [accountCharacters, setAccountCharacters] = useState([firstChar]);
-  const [weaponsStats, setWeaponsStats] = useState(
-    genereateTempleteWeaponStats()
-  );
-  const [activityStats, setActivityStats] = useState(
-    genereateTempleteActivity()
-  );
+  const [weaponsStats, setWeaponsStats] = useState<allCharactersStats>();
+  const [activityStats, setActivityStats] = useState<activityPvEPVP>();
+
+  const [medelStats, setMedelStats] = useState<medels>();
+
   const [witchStats, setWitchStats] = useState(true);
   const { platformNumber, accountName } = useParams();
 
@@ -73,6 +69,7 @@ const ShowAccountInfo = () => {
     setAccountCharacters(charInfo as characters[]);
     setWeaponsStats(stats.weaponStats);
     setActivityStats(stats.activityStats);
+    setMedelStats(stats.pvpMedels);
     setIsLoading(true);
   };
 
@@ -108,9 +105,17 @@ const ShowAccountInfo = () => {
 
   const showWitchStats = () => {
     if (witchStats) {
-      return <ShowAllTimeStats stats={weaponsStats.pvp.allTime} />;
+      return (
+        <ShowAllTimeStats
+          stats={(weaponsStats as allCharactersStats).pvp.allTime}
+        />
+      );
     } else {
-      return <ShowAllTimeStats stats={weaponsStats.pve.allTime} />;
+      return (
+        <ShowAllTimeStats
+          stats={(weaponsStats as allCharactersStats).pve.allTime}
+        />
+      );
     }
   };
 
@@ -124,15 +129,15 @@ const ShowAccountInfo = () => {
 
   const showActivity = () => {
     if (witchStats) {
-      return <ActivityStatsPvP stats={activityStats} />;
+      return <ActivityStatsPvP stats={(activityStats as activityPvEPVP)} />;
     } else {
-      return <ActivityStatsPvE stats={activityStats} />;
+      return <ActivityStatsPvE stats={(activityStats as activityPvEPVP)} />;
     }
   };
 
   const showMedels = () => {
     if (witchStats) {
-      return <Medels />;
+      return <Medels medels={medelStats as medels} />;
     } else {
       return "";
     }
