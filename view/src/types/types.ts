@@ -21,6 +21,7 @@ export interface responsAllChars {
   Response: {
     weaponStats: allCharactersStats
     activityStats: activityPvEPVP
+    pvpMedels:medels
   }
 }
 
@@ -100,6 +101,17 @@ export interface profilId {
   message: string
   Respons: string
 }
+
+export interface medels {
+  medalAvenger:activitiesInfoStats
+  medalPayback:activitiesInfoStats
+  medalStreak5x:activitiesInfoStats
+  medalQuickStrike:activitiesInfoStats
+  medalDefeatWarlockSigil: activitiesInfoStats
+  medalDefeatHunterDodge: activitiesInfoStats
+  medalDefeatTitanBrace: activitiesInfoStats
+  medalStreak10x:activitiesInfoStats
+  }
 
 
 interface activitiesInfoStats {

@@ -5,9 +5,12 @@ import Loading from "../loading";
 import ShowAllTimeStats from "../showAllTimeStats";
 import ActivityStatsPvP from "../activityStatsPvP";
 import ActivityStatsPvE from "../activityStatsPvE";
-import OverAllStats from '../overAllStats';
-import Medels from '../medels';
-import { getAccountInfo, getAccountStats } from "../../helpers/fetch/getAccountInfo";
+import OverAllStats from "../overAllStats";
+import Medels from "../medels";
+import {
+  getAccountInfo,
+  getAccountStats
+} from "../../helpers/fetch/getAccountInfo";
 import { characters, errorInFetch } from "../../types/types";
 import {
   genereateTempleteWeaponStats,
@@ -128,12 +131,12 @@ const ShowAccountInfo = () => {
   };
 
   const showMedels = () => {
-    if(witchStats) {
-      return <Medels/>
+    if (witchStats) {
+      return <Medels />;
     } else {
-      return ''
+      return "";
     }
-  }
+  };
 
   return (
     <div>
@@ -141,7 +144,7 @@ const ShowAccountInfo = () => {
         <div className="itemAccountInfo">
           <div className="itemAcc">{chars}</div>
         </div>
-        <OverAllStats/>
+        <OverAllStats />
       </div>
       <div className="activitySelect">
         <h3

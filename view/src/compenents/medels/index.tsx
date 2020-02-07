@@ -1,5 +1,11 @@
 import React, { useState } from "react";
+import {medels} from '../../types/types';
 import "./style.css";
+
+interface props {
+  medels: medels
+}
+
 
 const Medels = () => {
   const [showMedels, setShowMedels] = useState(false);
