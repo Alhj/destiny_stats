@@ -129,9 +129,9 @@ const ShowAccountInfo = () => {
 
   const showActivity = () => {
     if (witchStats) {
-      return <ActivityStatsPvP stats={(activityStats as activityPvEPVP)} />;
+      return <ActivityStatsPvP stats={activityStats as activityPvEPVP} />;
     } else {
-      return <ActivityStatsPvE stats={(activityStats as activityPvEPVP)} />;
+      return <ActivityStatsPvE stats={activityStats as activityPvEPVP} />;
     }
   };
 
@@ -144,31 +144,33 @@ const ShowAccountInfo = () => {
   };
 
   return (
-    <div>
-      <div className="cointenerAccountInfo">
-        <div className="itemAccountInfo">
-          <div className="itemAcc">{chars}</div>
+    <section className="accountStats">
+      <div>
+        <div className="cointenerAccountInfo">
+          <div className="itemAccountInfo">
+            <div className="itemAcc">{chars}</div>
+          </div>
+          <OverAllStats />
         </div>
-        <OverAllStats />
+        <div className="activitySelect">
+          <h3
+            style={{ backgroundColor: witchStats ? "white" : "darkgrey" }}
+            onClick={() => changeAcctivity(true)}
+          >
+            PvP
+          </h3>
+          <h3
+            style={{ backgroundColor: witchStats ? "darkgrey" : "white" }}
+            onClick={() => changeAcctivity(false)}
+          >
+            PvE
+          </h3>
+        </div>
+        {showActivity()}
+        {showWitchStats()}
+        {showMedels()}
       </div>
-      <div className="activitySelect">
-        <h3
-          style={{ backgroundColor: witchStats ? "white" : "darkgrey" }}
-          onClick={() => changeAcctivity(true)}
-        >
-          PvP
-        </h3>
-        <h3
-          style={{ backgroundColor: witchStats ? "darkgrey" : "white" }}
-          onClick={() => changeAcctivity(false)}
-        >
-          PvE
-        </h3>
-      </div>
-      {showActivity()}
-      {showWitchStats()}
-      {showMedels()}
-    </div>
+    </section>
   );
 };
 

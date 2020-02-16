@@ -16,32 +16,36 @@ const ActivityStatsPvE = (props: stats) => {
   };
 
   return (
-    <div className="activtyStats">
-      <h2>activity</h2>
-      <div className="cointener" style={{display: show? 'flex' : 'none'}}>
-        <div className="item">
-          <h3>total kills: {activity.kills.basic.displayValue}</h3>
+    <section className="accountActivityStats">
+      <div className="activtyStats">
+        <h2>activity</h2>
+        <div className="cointener" style={{ display: show ? "flex" : "none" }}>
+          <div className="item">
+            <h3>total kills: {activity.kills.basic.displayValue}</h3>
+          </div>
+          <div className="item">
+            <h3>
+              precions kills: {activity.precisionKills.basic.displayValue}
+            </h3>
+          </div>
+          <div className="item">
+            <h3>
+              public events completed:{" "}
+              {activity.publicEventsCompleted.basic.displayValue}
+            </h3>
+          </div>
+          <div className="item">
+            <h3>
+              heroic public event completed:{" "}
+              {activity.heroicPublicEventsCompleted.basic.displayValue}
+            </h3>
+          </div>
         </div>
-        <div className="item">
-          <h3>precions kills: {activity.precisionKills.basic.displayValue}</h3>
-        </div>
-        <div className="item">
-          <h3>
-            public events completed:{" "}
-            {activity.publicEventsCompleted.basic.displayValue}
-          </h3>
-        </div>
-        <div className="item">
-          <h3>
-            heroic public event completed:{" "}
-            {activity.heroicPublicEventsCompleted.basic.displayValue}
-          </h3>
-        </div>
+        <span className="showStats" onClick={() => handelClick()}>
+          <h3>{show ? "-" : "+"}</h3>
+        </span>
       </div>
-      <span className="showStats" onClick={() => handelClick()}>
-        <h3>{show? '-': '+'}</h3>
-      </span>
-    </div>
+    </section>
   );
 };
 

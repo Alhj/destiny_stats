@@ -15,6 +15,7 @@ const Medels = (props:props) => {
   };
 
   return (
+    <section className="medels">
     <div className="medel">
       <h2>Medles</h2>
       <div style={{ display: showMedels ? "flex" : "none" }} className="medels">
@@ -79,6 +80,7 @@ const Medels = (props:props) => {
         <h3>{showMedels ? "-" : "+"}</h3>
       </span>
     </div>
+    </section>
   );
 };
 
