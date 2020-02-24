@@ -1,6 +1,6 @@
 export interface actionTypes {
   type: string,
-  payload: string
+  payload: string | number
 }
 
 export interface respons {
@@ -112,7 +112,6 @@ export interface medels {
   medalDefeatTitanBrace: activitiesInfoStats
   medalStreak10x:activitiesInfoStats
   }
-
 
 interface activitiesInfoStats {
   statId: string

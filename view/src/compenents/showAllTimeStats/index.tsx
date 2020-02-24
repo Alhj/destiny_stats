@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { gerenteStats } from "../../helpers/genereateTemplete/generateAllStatsMocObject";
 import { allStats } from "../../types/types";
+import { windowWidthCheck } from "../../helpers/lib/window";
 
 import "./showAllTimeStats.css";
 
@@ -11,13 +12,13 @@ interface propsInterface {
 const ShowWeaponStats = (props: propsInterface) => {
   let stats = props.stats;
 
-  const [showAbilitys, setShowAbilitys] = useState(true);
+  const [showAbilitys, setShowAbilitys] = useState(windowWidthCheck());
 
-  const [showPrimary, setShowPrimary] = useState(true);
+  const [showPrimary, setShowPrimary] = useState(windowWidthCheck());
 
-  const [showSpecial, setShowSpecial] = useState(true);
+  const [showSpecial, setShowSpecial] = useState(windowWidthCheck());
 
-  const [showHeavy, setShowHeavy] = useState(true);
+  const [showHeavy, setShowHeavy] = useState(windowWidthCheck());
 
   if (!stats) {
     stats = gerenteStats();
