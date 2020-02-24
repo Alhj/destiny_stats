@@ -63,6 +63,11 @@ width: 100%;
     background-size: cover;
   }
 
+  .characterClassType {
+    margin-left: 20%
+  }
+
+
   .cointenerAccountInfo {
     display: block;
   }

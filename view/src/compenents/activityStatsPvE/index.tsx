@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { activityPvEPVP } from "../../types/types";
+import { windowWidthCheck } from "../../helpers/lib/window";
 import "./style.css";
 
 interface stats {
@@ -9,7 +10,7 @@ interface stats {
 const ActivityStatsPvE = (props: stats) => {
   const activity = props.stats.pve;
 
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(windowWidthCheck());
 
   const handelClick = () => {
     setShow(show ? false : true);
