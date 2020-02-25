@@ -1,5 +1,5 @@
 .activtyStats {
-  background-color: #929191;
+  background-color: #5B89A6;
   border-top: solid black 1px;
 }
 
@@ -13,6 +13,7 @@
   margin-bottom: 2px;
   padding-bottom: 5px;
   margin-top: 0px;
+  padding: 10px;
 }
 
 .cointener {

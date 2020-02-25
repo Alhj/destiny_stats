@@ -8,7 +8,7 @@
 .heavy,
 .abilty {
   border-top: 1px solid black;
-  background-color: #929191;
+  background-color: #5B89A6;
 }
 
 .primary h2,
@@ -23,6 +23,7 @@
   margin-bottom: 2px;
   padding-bottom: 5px;
   margin-top: 0px;
+  padding:10px;
 }
 
 .item {
@@ -30,7 +31,7 @@
 }
 
 .item h3 {
-  color: whitesmoke;
+  color: #F2F2F2;
 }
 
 

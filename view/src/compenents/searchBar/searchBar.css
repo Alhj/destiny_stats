@@ -9,8 +9,6 @@
   border: none;
   border-top-left-radius: 99px;
   border-bottom-left-radius: 99px;
-  background-color: #868562;
-  color:#C0BCAB
 }
 
 .SearchBar input {
@@ -22,6 +20,7 @@
 .SearchBar select, .SearchBar input, .SearchBar button {
   font-size: 1.1em;
   padding: 0 10px;
+  background-color: #F2F2F2;
 }
 
 .SearchBar button {
@@ -29,7 +28,6 @@
   border: none;
   border-left: 0.05em solid black;
   cursor: pointer;
-  background-color: white;
   border-top-right-radius: 99px;
   border-bottom-right-radius: 99px;
 }

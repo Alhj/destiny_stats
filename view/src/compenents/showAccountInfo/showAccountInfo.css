@@ -1,6 +1,6 @@
 .cointenerAccountInfo {
 display: flex;
-width: 100%;
+width: 40%;
 }
 
 .itemAccountInfo {
@@ -69,7 +69,7 @@ h3 {
 
 @media only screen and (max-width: 600px) {
   .emblem {
-    width: 100%;
+    width: 250%;
     background-size: cover;
   }
 

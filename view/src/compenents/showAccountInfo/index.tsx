@@ -150,7 +150,6 @@ const ShowAccountInfo = () => {
           <div className="itemAccountInfo">
             <div className="itemAcc">{chars}</div>
           </div>
-          <OverAllStats />
         </div>
         <div className="activitySelect">
           <h3
