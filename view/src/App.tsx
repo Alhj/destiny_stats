@@ -6,6 +6,7 @@ import StartSearch from "./compenents/startSearch";
 import ShowAccountInfo from "./compenents/showAccountInfo";
 import GetPlayerProfil from "./compenents/getPlayerProfil";
 import NoCharacter from './compenents/noCharacterFound';
+import Footer from './compenents/footer';
 import Medels from './compenents/medels';
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         <Route path='/noCharacter' component={NoCharacter}/>
         <Route path='/medels' component={Medels}/>
       </Switch>
+      <Footer />
     </Router>
   );
 };
