@@ -15,7 +15,7 @@ const ActivityStats = (props: stats) => {
     setShow(show ? false : true);
   };
   return (
-    <section className="accountActivityStats">
+    <section className="accountActivityStats contentWraper">
       <div className="activtyStats">
         <h2>activity</h2>
         <div className="cointener" style={{ display: show ? "flex" : "none" }}>

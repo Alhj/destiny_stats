@@ -1,5 +1,6 @@
 .SearchBar{
   height: 30px;
+  padding: 10px;
   display: flex;
 }
 
@@ -8,7 +9,8 @@
   border: none;
   border-top-left-radius: 99px;
   border-bottom-left-radius: 99px;
-  background-color: #d6d6d6;
+  background-color: #868562;
+  color:#C0BCAB
 }
 
 .SearchBar input {

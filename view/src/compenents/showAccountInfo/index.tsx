@@ -144,7 +144,7 @@ const ShowAccountInfo = () => {
   };
 
   return (
-    <section className="accountStats">
+    <section className="accountStats contentWraper">
       <div>
         <div className="cointenerAccountInfo">
           <div className="itemAccountInfo">

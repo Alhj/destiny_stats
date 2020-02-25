@@ -15,7 +15,7 @@ const Medels = (props:props) => {
   };
 
   return (
-    <section className="medels">
+    <section className="medels contentWraper">
     <div className="medel">
       <h2>Medles</h2>
       <div style={{ display: showMedels ? "flex" : "none" }} className="medels">

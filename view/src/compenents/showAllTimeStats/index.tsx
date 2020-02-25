@@ -45,7 +45,7 @@ const ShowWeaponStats = (props: propsInterface) => {
   };
 
   return (
-    <section className="accountStats">
+    <section className="accountStats contentWraper">
       <div>
         <div className="abilty">
           <h2>Abilitys</h2>

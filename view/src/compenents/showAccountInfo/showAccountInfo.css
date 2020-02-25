@@ -25,6 +25,7 @@ width: 100%;
 
 .characterInfo h2 {
   color: white;
+  padding: 10px;
   align-self: flex_start;
 }
 
@@ -32,9 +33,12 @@ width: 100%;
   width: 50%;
   background-size: cover;
 }
-
+.characterClassType {
+  margin-left: 20%
+}
 .characterLigth {
   order: 2;
+  padding: 10px;
   color: rgb(245, 220, 86);
 }
 .activitySelect {
@@ -54,6 +58,12 @@ width: 100%;
   padding-left: 3px;
   padding-right: 3px;
   padding-top: 2px;
+  padding-bottom: 0px;
+}
+
+
+h3 {
+  padding:10px
 }
 
 
