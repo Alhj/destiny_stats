@@ -5,7 +5,6 @@ import Loading from "../loading";
 import ShowAllTimeStats from "../showAllTimeStats";
 import ActivityStatsPvP from "../activityStatsPvP";
 import ActivityStatsPvE from "../activityStatsPvE";
-import OverAllStats from "../overAllStats";
 import Medels from "../medels";
 import {
   getAccountInfo,
@@ -153,13 +152,13 @@ const ShowAccountInfo = () => {
         </div>
         <div className="activitySelect">
           <h3
-            style={{ backgroundColor: witchStats ? "white" : "darkgrey" }}
+            style={{ backgroundColor: witchStats ? "#5B89A6" : "#590202" }}
             onClick={() => changeAcctivity(true)}
           >
             PvP
           </h3>
           <h3
-            style={{ backgroundColor: witchStats ? "darkgrey" : "white" }}
+            style={{ backgroundColor: witchStats ? "#590202" : "#5B89A6" }}
             onClick={() => changeAcctivity(false)}
           >
             PvE
