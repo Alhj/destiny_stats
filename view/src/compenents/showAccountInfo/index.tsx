@@ -144,7 +144,7 @@ const ShowAccountInfo = () => {
 
   return (
     <section className="accountStats contentWraper">
-      <div>
+      <div className="cointenerMain">
         <div className="cointenerAccountInfo">
           <div className="itemAccountInfo">
             <div className="itemAcc">{chars}</div>
@@ -152,13 +152,13 @@ const ShowAccountInfo = () => {
         </div>
         <div className="activitySelect">
           <h3
-            style={{ backgroundColor: witchStats ? "#5B89A6" : "#590202" }}
+            style={{ backgroundColor: witchStats ? "#5B89A6" : "#8C0303" }}
             onClick={() => changeAcctivity(true)}
           >
             PvP
           </h3>
           <h3
-            style={{ backgroundColor: witchStats ? "#590202" : "#5B89A6" }}
+            style={{ backgroundColor: witchStats ? "#8C0303" : "#5B89A6" }}
             onClick={() => changeAcctivity(false)}
           >
             PvE

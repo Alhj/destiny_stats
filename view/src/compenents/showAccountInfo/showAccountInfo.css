@@ -1,3 +1,8 @@
+.cointenerMain {
+  width:60%;
+  margin:auto;
+}
+
 .cointenerAccountInfo {
 display: flex;
 width: 40%;
@@ -30,7 +35,7 @@ width: 40%;
 }
 
 .emblem {
-  width: 50%;
+  width: 100%;
   background-size: cover;
 }
 .characterClassType {
@@ -68,6 +73,11 @@ h3 {
 
 
 @media only screen and (max-width: 600px) {
+
+  .cointenerMain {
+    width:100%;
+  }
+
   .emblem {
     width: 250%;
     background-size: cover;
