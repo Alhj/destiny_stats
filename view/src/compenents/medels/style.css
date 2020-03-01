@@ -17,10 +17,14 @@
 
 .medels {
   flex-wrap: wrap;
+  justify-content: center;
 }
+
+
 
 .medels .medelsComponent{
   flex: 1 25%;
+  color: white;
 }
 
 .showStats {
