@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { windowWidthCheck } from "../../helpers/lib/window";
 import { medels } from "../../types/types";
 import "./style.css";
 
@@ -8,7 +9,7 @@ interface props {
 }
 
 const Medels = (props: props) => {
-  const [showMedels, setShowMedels] = useState(false);
+  const [showMedels, setShowMedels] = useState(windowWidthCheck());
 
   const clickHandler = () => {
     setShowMedels(showMedels ? false : true);
